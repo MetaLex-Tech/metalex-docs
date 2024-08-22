@@ -45,27 +45,47 @@ export default defineConfig({
       ],
     },
     {
-      text: 'Intro to BORGs',
-      link: '/intro-to-borgs',
+      text: 'Onchain BORGs',
       collapsed: false, 
       items: [ 
         {
-          text: 'Onchain BORGs',
-          link: '/onchain-borgs',
+          text: 'Intro to BORGs',
+          link: '/borgs/intro-to-borgs',
         },
         {
-          text: 'BORG Types',
-          link: '/borg-types',
+          text: 'BORG Modes',
+          link: '/borg-modes',
+          collapsed: false,
+          items: [
+            {
+            text: 'Unrestricted // Open',
+            link: '/borg-modes/Unrestricted',
+          },
+          {
+            text: 'Blacklist // Light Control',
+            link: '/borg-modes/blacklist',
+          },
+          {
+            text: 'Whitelist // Maximal Control',
+            link: '/borg-modes/whitelist',
+          },
+          ]
         },
         {
           text: 'Implants',
-          link: '/implants',
+          link: 'borgs/implants',
         },
         {
           text: 'Implants',
-          link: '/conditions',
+          link: 'borgs/conditions',
         }, 
       ], 
     },
+    {
+      text: 'MetaVesT',
+    },
+    {
+      text: 'LexScrow',
+    }
   ],
 })
