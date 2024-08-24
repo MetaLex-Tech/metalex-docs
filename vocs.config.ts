@@ -12,15 +12,34 @@ export default defineConfig({
           link: '/os/metalex-os-intro',
         },
         {
-          text: 'DAO Landing Page',
+          text: 'Intro to BORGs',
           link: '/os/dao/dao-landing',
           items: []
         },
         {
-          text: 'BORG Landing Page',
+          text: 'BORG Command Center',
           link: '/os/borg/borg-landing',
           collapsed: false, 
           items: [
+            {
+              text: '"How-to" BORG',
+              link: '/os/borg/borg-types',
+              collapsed: true, 
+              items: [
+                {
+                  text: 'grantsBORG',
+                  link: '/os/borg/borg-types/grantsborg',
+                },
+                {
+                  text: 'devBORG',
+                  link: '/os/borg/borg-types/devborg',
+                },
+                {
+                  text: 'securityBORG',
+                  link: '/os/borg/borg-types/securityborg',
+                }
+              ]
+            },
             {
               text: 'BORG Types',
               link: '/os/borg/borg-types',
@@ -49,8 +68,12 @@ export default defineConfig({
       collapsed: false, 
       items: [ 
         {
-          text: 'Intro to BORGs',
+          text: 'Intro to Onchain BORGs',
           link: '/borgs/intro-to-borgs',
+        },
+        {
+          text: 'borgCORE',
+          link: '/borgs/borg-core',
         },
         {
           text: 'BORG Modes',
@@ -58,15 +81,15 @@ export default defineConfig({
           collapsed: false,
           items: [
             {
-            text: 'Unrestricted // Open',
+            text: 'Unrestricted',
             link: '/borg-modes/Unrestricted',
           },
           {
-            text: 'Blacklist // Light Control',
+            text: 'Blacklist',
             link: '/borg-modes/blacklist',
           },
           {
-            text: 'Whitelist // Maximal Control',
+            text: 'Whitelist',
             link: '/borg-modes/whitelist',
           },
           ]
@@ -74,18 +97,40 @@ export default defineConfig({
         {
           text: 'Implants',
           link: 'borgs/implants',
+          items: [
+            {
+              text: 'FailSafe',
+              link: 'borgs/implants/fail-safe',
+            },
+            {
+              text: 'Eject',
+              link: 'borgs/implants/eject',
+            },
+            {
+              text: 'Optimistic Grant',
+              link: 'borgs/implants/optimistic-grant',
+            },
+            {
+              text: 'DAO Veto Grant',
+              link: 'borgs/implants/dao-veto-grant',
+            },
+            {
+              text: 'DAO Vote Grant',
+              link: 'borgs/implants/dao-vote-grant',
+            },
+          ]
         },
         {
-          text: 'Implants',
+          text: 'Conditions',
           link: 'borgs/conditions',
         }, 
       ], 
     },
     {
-      text: 'MetaVesT',
+      text: 'MetaVesT (Coming Soon)',
     },
     {
-      text: 'LexScrow',
+      text: 'LexScrow (Coming Soon)',
     }
   ],
 })
