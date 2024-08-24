@@ -27,17 +27,40 @@ export default defineConfig({
               collapsed: true, 
               items: [
                 {
-                  text: 'grantsBORG',
+                  text: 'BORG Members',
                   link: '/os/borg/borg-types/grantsborg',
+                  collapsed: true,
+                  items: [
+                    {
+                      text: 'Propose a transaction',
+                    },
+                    {
+                      text: 'Manage members',
+                    },
+                    {
+                      text: 'Manage Documents',
+                    },
+                    
+                  ]
                 },
                 {
-                  text: 'devBORG',
+                  text: 'DAO Token Holders',
                   link: '/os/borg/borg-types/devborg',
+                  items: [
+                    {
+                      text: 'Initiate a DAO Vote',
+                    },
+                    {
+                      text: 'Eject a BORG member',
+                    },
+                    {
+                      text: 'Update a BORG\'s policy',
+                    },
+                    {
+                      text: 'Recover DAO funds',
+                    },
+                  ]
                 },
-                {
-                  text: 'securityBORG',
-                  link: '/os/borg/borg-types/securityborg',
-                }
               ]
             },
             {
@@ -97,6 +120,7 @@ export default defineConfig({
         {
           text: 'Implants',
           link: 'borgs/implants',
+          collapsed: true,
           items: [
             {
               text: 'FailSafe',
