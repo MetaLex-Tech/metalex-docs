@@ -13,7 +13,7 @@ export default defineConfig({
         },
         {
           text: 'Intro to BORGs',
-          link: '/os/dao/dao-landing',
+          link: '/os/dao/intro-to-borgs',
           items: []
         },
         {

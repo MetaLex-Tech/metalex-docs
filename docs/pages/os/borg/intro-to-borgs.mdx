@@ -1,0 +1,23 @@
+# Intro to BORGS
+
+‘BORGs’ is short for ‘cyBernetic ORGanizationS’: BORGs are cybernetic entities. Since Delphi Labs’ seminal article on BORGs last year, the concept has taken off, with many DAOs adopting BORGs or BORG-inspired solutions and the occurrence of much discussion on the concept, both pro- and anti-.
+
+While a full read of the Delphi Labs’ article is recommended, to briefly recap: BORGs are traditional entities (corporations, limited liability companies, foundations, etc.) that legally mandate the use of autonomous technologies (such as smart contracts and AI) to conduct some or all of their operations and/or governance. Augmenting the entities with autonomous technologies enhances efficiency, trust minimization and ‘social scalability’ while reducing liability and regulatory risks. BORGs may be independent entities that use autonomous technologies in their operations—what we at MetaLeX call ‘bizBORGs’—or they may be “DAO-adjacent entities” that are funded by and undertake activities beneficial to larger DAOs, under a carefully constructed set of checks and balances.
+
+Since Delphi Labs’ BORGs article was published, the MetaLeX team has been working with various DAOs to create DAO-adjacent BORGs. We have also realized that some protocol communities were already pursuing very BORG-like solutions—for example, Lido’s “EasyTrack” system of optimistically DAO-accountable multisig committees powered by ApeWorX. Our continuing work and research on BORGs, as well as our research into existing BORG-like solutions, led us to internally generate various detailed specifications for how different types of BORGs should be designed, as well as to begin developing an actual onchain ‘BORG Protocol’ that will be discussed below.
+
+From this work, we have been able to conceptualize BORGs as part of a new design space where hybrid/code law solutions should be guided by the following design principles:
+
+Principle 1 – Maximize Deference to Autonomous Code
+
+Maximize the role of trust-minimized smart contracts and other autonomous or decentralized technologies to handle as many deterministic functions as possible. This includes using autonomous technologies such as smart contracts as  replacements for traditional legal arrangements that prescribe relatively deterministic rules.
+
+Minimize the role of traditional law (TradLaw) tools such as ‘wet contracts’ and litigation as much as possible in the operations and governance of legal entities and other legal arrangements. When ‘wet contracts’ are required, they be designed to refer and to defer to the outcomes of autonomous code as much as possible
+
+Principle 2 –Qualify Autonomous Code Where Necessary
+
+Identify edge-cases in which Principle #1 may lead to unacceptably unfair, unjust, or unanticipated results and use TradLaw mechanisms to ensure that autonomous code is not outcome-determinative code in these particular circumstances. Instead, offchain legal mechanisms can kick-in to handle these special scenarios in a more fair, just, and legal way.
+
+Principle 3 - Use TradLaw Mechanisms to Constrain Offchain Agents
+
+If there are humans in the loop and such humans, despite the use of autonomous technologies, remain in positions of ‘trust’ and thus retain significant potential for acting based on conflicts of interest, abusing their discretion, adversely colluding, cultivating information asymmetries, free-riding, or otherwise abusing their power, we must use traditional ‘wet contracts’ and other legal tools to define their rights and obligations clearly and hold them accountable if such trust is indeed abused. Principle #3 may also be seen as a special sub-case of Principle #2, since in such cases autonomous code by itself is inadequate to achieve trust-minimization or social scaling—however, under Principle #3, law is used more as a supplement to code than as a fallback mechanism for code failures.
