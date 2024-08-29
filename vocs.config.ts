@@ -23,7 +23,7 @@ export default defineConfig({
           items: [
             {
               text: '"How-to" BORG',
-              link: '/os/borg/borg-types',
+              link: '/os/borg/how-to',
               collapsed: true, 
               items: [
                 {
@@ -119,34 +119,34 @@ export default defineConfig({
         },
         {
           text: 'Implants',
-          link: 'borgs/implants',
+          link: '/borgs/implants',
           collapsed: true,
           items: [
             {
               text: 'FailSafe',
-              link: 'borgs/implants/fail-safe',
+              link: '/borgs/implants/fail-safe',
             },
             {
               text: 'Eject',
-              link: 'borgs/implants/eject',
+              link: '/borgs/implants/eject',
             },
             {
               text: 'Optimistic Grant',
-              link: 'borgs/implants/optimistic-grant',
+              link: '/borgs/implants/optimistic-grant',
             },
             {
               text: 'DAO Veto Grant',
-              link: 'borgs/implants/dao-veto-grant',
+              link: '/borgs/implants/dao-veto-grant',
             },
             {
               text: 'DAO Vote Grant',
-              link: 'borgs/implants/dao-vote-grant',
+              link: '/borgs/implants/dao-vote-grant',
             },
           ]
         },
         {
           text: 'Conditions',
-          link: 'borgs/conditions',
+          link: '/borgs/conditions',
         }, 
       ], 
     },
