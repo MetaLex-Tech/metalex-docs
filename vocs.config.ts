@@ -24,7 +24,7 @@ export default defineConfig({
             {
               text: '"How-to" BORG',
               link: '/os/borg/how-to',
-              collapsed: true, 
+              collapsed: false, 
               items: [
                 {
                   text: 'BORG Members',
@@ -100,20 +100,20 @@ export default defineConfig({
         },
         {
           text: 'BORG Modes',
-          link: '/borg-modes',
+          link: '/borgs/borg-modes',
           collapsed: false,
           items: [
             {
             text: 'Unrestricted',
-            link: '/borg-modes/Unrestricted',
+            link: '/borgs/borg-modes/Unrestricted',
           },
           {
             text: 'Blacklist',
-            link: '/borg-modes/blacklist',
+            link: '/borgs/borg-modes/blacklist',
           },
           {
             text: 'Whitelist',
-            link: '/borg-modes/whitelist',
+            link: '/borgs/borg-modes/whitelist',
           },
           ]
         },
