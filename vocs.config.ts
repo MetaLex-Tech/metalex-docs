@@ -12,6 +12,10 @@ export default defineConfig({
           link: '/os/metalex-os-intro',
         },
         {
+          text: 'Key Terms',
+          link: '/os/key-terms',
+        },
+        {
           text: 'Intro to BORGs',
           link: '/os/dao/intro-to-borgs',
           items: []
@@ -79,11 +83,11 @@ export default defineConfig({
                 {
                   text: 'securityBORG (coming soon)',
                   link: '/os/borg/borg-types/securityborg',
-                }
+                },
                 {
                   text: 'finBORG (coming soon)',
                   link: '/os/borg/borg-types/finborg',
-                }
+                },
                 {
                   text: 'genBORG (coming soon)',
                   link: '/os/borg/borg-types/genborg',
