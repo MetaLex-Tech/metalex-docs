@@ -77,8 +77,16 @@ export default defineConfig({
                   link: '/os/borg/borg-types/devborg',
                 },
                 {
-                  text: 'securityBORG',
+                  text: 'securityBORG (coming soon)',
                   link: '/os/borg/borg-types/securityborg',
+                }
+                {
+                  text: 'finBORG (coming soon)',
+                  link: '/os/borg/borg-types/finborg',
+                }
+                {
+                  text: 'genBORG (coming soon)',
+                  link: '/os/borg/borg-types/genborg',
                 }
               ]
             }
