@@ -1,15 +1,60 @@
 # Key Terms
 
-## BORG ### test
+## BORG ### 
 
-## Human-in-the-loop
+The Cybernetic Organization (CybOrg or ‘BORG’), is a traditional legal entity that uses autonomous technologies (such as smart contracts and AI) to augment the entity’s governance and activities. Just as sci-fi cyborgs (‘cybernetic organisms’) augment humans (natural persons) with robotic organs and limbs or microchip or optics implants, BORGs augment state-chartered entities (legal persons) with autonomous software such as smart contracts and AI. Crucially, legal entities that are BORGs do not merely use autonomous technologies as an incidental part of their business–instead, much like a human might have a robotic prosthesis surgically attached to his shoulder, BORGs are legally governed by autonomous technologies through tech-specific rules implanted in their charter documents.
 
-## Quorum threshold
+Similar to DAOs, BORGs operate mostly in public and seek to utilize cutting-edge technology and economic incentive mechanisms to minimize traditional trust-based reliance on intermediaries, fiduciaries and other agents. Unlike a DAO, however, BORGs are not intended to be fully transparent, fully decentralized or fully autonomous or to rely on technological and economic incentive mechanisms alone; instead, they are incorporated as state-chartered entities and rely on a mix of legal, technological and economic mechanisms.
 
-## Implants
+## DAO ### 
 
-## BORG-CORE
+There is no clear consensus about what a “DAO” is and how it should be defined, and a wide variety of organizations, communities, groups and entities are referred to as “DAOs”. 
 
-## Conditions
+MetaLeX OS can plug-and-play with any of these conceptions, but the MetaLeX team prefers sticking to the literal meaning of the acronym “D.A.O.” — i.e., that DAOs must be decentralized and autonomous organizations, where:
+ * “Autonomous” means self-governing, trust-minimized and resistant to extrinsic exercises of power. 
+ * “Decentralized” means that any residual human discretion (i.e., intrinsic modalities of power) are systematically dispersed over a large, agile, and potentially anonymous group of incentive-aligned persons.
+ * "Organization" refers to whatever structures or people are organized through the relevant auotnomous decentralized technologies. 
 
-## Veto + timelock
+Put more simply, we view DAOs as limited-programmability robots where the limited programmability power is widely dispersed among users who can only adjust the program in accordance with hard-coded meta-programming rules.
+
+The riskiest liability vectors that could be associated with DAOs (clearly commercial and/or regulated off-chain activities such as investing in new projects, hiring workers for salaried off-chain jobs, etc.) should be treated as adjacent to the DAO rather than part of it, and should be housed in transparent, accountable, cybernetically enhanced DAO-adjacent entities: BORGs.
+
+## Directors ### 
+
+Directors are individuals or entities with supervisory and/or operational authority over a legal entity. The exact scope and mechanisms through which directors manage an entity vary dependingon the entity type, jurisdiction, and the entity's specific rules (especially Bylaws). In the context of BORGs, directors are likely to be owners of private-key-signers on one or more SAFEs/multisigs included in the BORG. MetaLeX OS recognizes a specific 'director role' within multisigs, which is basically a subset of signers a majority of whom *must* approve a given transaction for it to execute. 
+
+## Guardians ### 
+
+Guardian is a role with no well-defined corporate precedent, but was created as a hybrid entity/SAFE role specifically for BORGs. Guardians are members of a SAFE/multisig within a BORG that are on the SAFE primarily to provide additional security (through wider distribution of private keys/signing power) or quality control and compliance checks, but do not have authorities/powers as broad as those of directors. Part of the reason for having the guardian role is that the KYC/AML and compliance obligations of a legtal entity's directors may be very high, meaning that it is hard to obtain a large number of directors to serve on a BORG, but, meanwhile, for reasons of increasing the security of tokens held by a SAFE, it is desirable to have a greater number of private key holders to lower the risk of 'wrench attacks' and other physical attacks as well as loss of keys or unavailability/downtime of signers in an emergency. A BORG's SAFE/multisig may therefore be required to require the approval of both a majority of the directors and some minimum number of guardians before a transatcion will execute from the SAFE/multisig. 
+
+## Legal Entity ### 
+
+A legal entity is an organization that is given independent personhood through the statutes of a nation or state. Legal entities are generally formed through 'incorporation' or a similar process--filing the entity's charter documents with the relevant nation or state and following specific rules and formalities in doing so. Legal entities generally confer 'limited liability' on their owners and operators--i.e., if the legal entity violates a law or breaches a contract, it is the entity that is liable (out of the assets owned by the entity) and not the individuals who own or operate the entity. Legal entities also allow for continuity of operations over time (for example, enabling long-term legal agreements, banking relationships, etc.) even as individual humans who operate the legal entity change over time. 
+
+## Multisig aka SAFE ###
+
+See [SAFE aka Multisig below](). 
+
+## SAFE aka Multisig ###
+
+SAFEs, aka multisigs or 'smart accounts' are smart contracts implementing [the Gnosis SAFE source code](https://github.com/safe-global/safe-smart-account). These are smart contract multi-sig 'wallets' running on Ethereum that require a minimum number of private key signatures (corresponding to public addresses on Ehtereum) to approve a transaction before it can be executed by the smart contract. Typically in the BORG context, each public/private key address is owned/controlled by a different human individual. 
+
+## SAFE Guard ###
+
+SAFE Guards are smart contracts that constrain the functioning of an otherwise standard Gnosis SAFE, providing controlled access to specific recipients and contracts. This is accomplished by imposing pre-transaction-checks and post-transaction-checks on the SAFE. Guards ‘safeguard the SAFE,’ as it were. If the checks are not satisfied by a given transaction, the transaction will not execute (aka ‘reversion’). 
+
+A Guard is added to a SAFE by calling the setGuard() function of the SAFE with the requisite majority or plurality of signatures, parametrized to the smart contract address of the Guard. A SAFE can manage multiple Guards through an intermediary GuardManager contract. A typical use-case would be only allowing ‘owners’ of the SAFE (denominated by address) to execute a transaction (useful for MEV protection) or to only allow the SAFE to interact with certain whitelisted smart contracts via certain whitelisted functions on those smart contracts (useful to prevent accidental transactions or to limit the use of funds). 
+
+## SAFE Module ###
+
+SAFE Modules (sometimes just referred to as 'modules') are smart contracts that extend or modify the functioning of an otherwise standard Gnosis SAFE. They can execute transactions on the SAFE that have not been individually approved by the requisite majority or plurality of signatures. 
+
+A Module is added to a SAFE by calling the enableModule() function of the SAFE with the requisite majority or plurality of signatures, parameterized to the smart contract address of the Module. A SAFE can manage multiple Modules through a ModuleManager contract. Typical use-cases would be giving another account a per-month ‘allowance’ it can spend out of the SAFE’s assets, timelocking an upgrade authority that may be exercised by the SAFE over a DeFi protocol, or facilitating Moloch-style ‘ragequit’ functionality where a signer can quit the multisig with a proportional share of its assets. 
+
+## Implants ###
+
+Implants aka 'cybernetic implants' are SAFE Modules included in MetaLeX OS and designed to make SAFEs function as parts of BORGs. 
+
+## BORG-CORE ###
+
+Every BORG on MetaLeX OS has a BORGcore smart contract as its heart. A BORGcore is a SAFE Guard combined with a standard ERC 4824 DAO interface. 
