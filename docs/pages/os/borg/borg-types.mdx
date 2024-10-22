@@ -1,3 +1,7 @@
+import { CardGrid, Card } from '../../../components/CardGrid';
+import { Callout } from '../../../components/Callout';
+import { LuShield } from "react-icons/lu";
+
 # BORG Types
 
 BORGs lend themselves to an almost infinite number of uses and configurations. Here we give a few examples. 
@@ -7,7 +11,7 @@ Grant BORGs are responsible for managing and distributing grants to projects, de
 
 An example is the [Neutron Grants BORG](https://forum.neutron.org/t/approved-proposal-14-launching-the-neutron-grants-program/95).  
 
-security-BORGs
+## security-BORGs
 
 Security BORGs wrap emergency/security multisigs like Curve's ['emergency DAO'](https://resources.curve.fi/governance/understanding-governance/#emergency-dao) (which we at MetaLeX would preferably refer to as an 'emergency BORG' instead). 
 
@@ -21,3 +25,37 @@ An example is the [Lido Alliance BORG](https://research.lido.fi/t/organize-the-l
 
 IP-BORGs
 Intellectual Property (IP) BORGs manage and protect the intellectual property assets associated with a DAO, such as patents, trademarks, copyrights, and trade secrets. These BORGs work to ensure that the DAO’s IP is properly registered, maintained, and enforced, while also respecting the rights of others in the ecosystem. IP BORGs also play a crucial role in negotiating licensing agreements, partnerships, and other arrangements that involve the sharing or transfer of intellectual property rights. This helps to foster innovation, collaboration, and the responsible use of IP within the decentralized ecosystem.
+
+### Borg Implants
+
+<CardGrid>
+  <Card title="Borg Implant" link="/os/borg/borg-implants/borg-implant" icon={<LuShield />}>
+    <span>Borg Implants are SAFE Modules included in MetaLeX OS and designed to make SAFEs function as parts of BORGs.</span>
+  </Card>
+  <Card title="Borg Implant" link="/os/borg/borg-implants/borg-implant">
+    <span>Borg Implants are SAFE Modules included in MetaLeX OS and designed to make SAFEs function as parts of BORGs.</span>
+  </Card>
+  <Card title="Borg Implant" link="/os/borg/borg-implants/borg-implant">
+    <span>Borg Implants are SAFE Modules included in MetaLeX OS and designed to make SAFEs function as parts of BORGs.</span>
+  </Card>
+  <Card title="Borg Implant" link="/os/borg/borg-implants/borg-implant">
+    <span>Borg Implants are SAFE Modules included in MetaLeX OS and designed to make SAFEs function as parts of BORGs.</span>
+  </Card>
+  <Card title="Borg Implant" link="/os/borg/borg-implants/borg-implant">
+    <span>Borg Implants are SAFE Modules included in MetaLeX OS and designed to make SAFEs function as parts of BORGs.</span>
+  </Card>
+</CardGrid>
+
+That was a nice little set of cards. Let's make a callout next that also optionally accepts an icon. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nunc euismod, elit nisi luctus nunc, euismod euismod nisi luctus nunc.
+
+<Callout>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nunc euismod, elit nisi luctus nunc, euismod euismod nisi luctus nunc.
+</Callout>
+
+<Callout type="warning">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nunc euismod, elit nisi luctus nunc, euismod euismod nisi luctus nunc.
+</Callout>
+
+<Callout type="security">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nunc euismod, elit nisi luctus nunc, euismod euismod nisi luctus nunc.
+</Callout>
