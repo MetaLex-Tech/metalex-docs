@@ -6,6 +6,10 @@ module.exports = {
       colors: {
         highlight: "#DAFF00",
         brand: {
+          highlight: {
+            DEFAULT: "#DAFF00",
+            "700": "#98B108"
+          },
           red: {
             DEFAULT: "#FF3333",
           },

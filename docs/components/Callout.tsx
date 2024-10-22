@@ -10,7 +10,7 @@ const calloutVariants = cva(
       type: {
         info: "border-brand-blue",
         warning: "border-brand-red",
-        security: "border-highlight",
+        security: "border-brand-highlight",
         check: "border-brand-green",
       },
     },
@@ -24,7 +24,7 @@ const iconVariants = cva("mt-[3px] text-2xl ml-1", {
     type: {
       info: "text-brand-blue",
       warning: "text-brand-red",
-      security: "",
+      security: "text-brand-highlight-700",
       check: "text-brand-green text-[19px] mt-[6px]",
     } satisfies Record<CalloutTypeVariants, string>,
   },
