@@ -1,0 +1,12 @@
+@layer vocs_preflight {
+  @tailwind base;
+}
+@tailwind components;
+@tailwind utilities;
+
+.vocs_Anchor {
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  @apply !text-brand-blue-700;
+}

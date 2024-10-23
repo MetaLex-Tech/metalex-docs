@@ -1,4 +1,5 @@
 import { defineConfig } from 'vocs'
+import path from 'path';
 
 export default defineConfig({
   title: 'MetaLeX OS Docs',
@@ -169,4 +170,11 @@ export default defineConfig({
       text: 'LexScrow (Coming Soon)',
     }
   ],
+  vite: {
+    resolve: {
+      alias: {
+        "@components": path.resolve(__dirname, "./docs/components"),
+      },
+    },
+  },
 })
