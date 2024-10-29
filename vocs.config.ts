@@ -36,7 +36,7 @@ export default defineConfig({
                 {
                   text: '🤖 BORG Members',
                   link: '/os/borg/borg-types/grantsborg',
-                  collapsed: true,
+                  collapsed: false,
                   items: [
                     {
                       text: 'Propose a transaction',
@@ -56,6 +56,7 @@ export default defineConfig({
                   items: [
                     {
                       text: 'Initiate a DAO Vote',
+                      link: '/os/borg/borg-types/grantsborg',
                     },
                     {
                       text: 'Eject a BORG member',
@@ -70,32 +71,32 @@ export default defineConfig({
                 },
               ]
             },
+          ]
+        },
+        {
+          text: '📙 BORG Types',
+          link: '/os/borg/borg-types',
+          collapsed: true, 
+          items: [
             {
-              text: '📙 BORG Types',
-              link: '/os/borg/borg-types',
-              collapsed: true, 
-              items: [
-                {
-                  text: 'grantsBORG',
-                  link: '/os/borg/borg-types/grantsborg',
-                },
-                {
-                  text: 'devBORG',
-                  link: '/os/borg/borg-types/devborg',
-                },
-                {
-                  text: 'securityBORG (coming soon)',
-                  link: '/os/borg/borg-types/securityborg',
-                },
-                {
-                  text: 'finBORG (coming soon)',
-                  link: '/os/borg/borg-types/finborg',
-                },
-                {
-                  text: 'genBORG (coming soon)',
-                  link: '/os/borg/borg-types/genborg',
-                }
-              ]
+              text: 'grantsBORG',
+              link: '/os/borg/borg-types/grantsborg',
+            },
+            {
+              text: 'devBORG',
+              link: '/os/borg/borg-types/devborg',
+            },
+            {
+              text: 'securityBORG (coming soon)',
+              link: '/os/borg/borg-types/securityborg',
+            },
+            {
+              text: 'finBORG (coming soon)',
+              link: '/os/borg/borg-types/finborg',
+            },
+            {
+              text: 'genBORG (coming soon)',
+              link: '/os/borg/borg-types/genborg',
             }
           ]
         }
