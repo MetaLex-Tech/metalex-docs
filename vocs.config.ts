@@ -1,38 +1,39 @@
 import { defineConfig } from 'vocs'
 import path from 'path';
+import { FaRegHandSpock } from "react-icons/fa6";
 
 export default defineConfig({
   title: 'MetaLeX OS Docs',
   sidebar: [
     {
-      text: 'MetaLeX OS',
+      text: '🖖 MetaLeX OS',
       collapsed: false,
       items: [
         {
-          text: 'Introduction',
+          text: '👋 Introduction',
           link: '/os/metalex-os-intro',
         },
         {
-          text: 'Key Terms',
+          text: '🔑 Key Terms',
           link: '/os/key-terms',
         },
         {
-          text: 'Intro to BORGs',
+          text: '😎 Intro to BORGs',
           link: '/os/dao/intro-to-borgs',
           items: []
         },
         {
-          text: 'BORG Command Center',
+          text: '💻 BORG Command Center',
           link: '/os/borg/borg-landing',
           collapsed: false, 
           items: [
             {
-              text: '"How-to" BORG',
+              text: '📝 "How-to" BORG',
               link: '/os/borg/how-to',
               collapsed: false, 
               items: [
                 {
-                  text: 'BORG Members',
+                  text: '🤖 BORG Members',
                   link: '/os/borg/borg-types/grantsborg',
                   collapsed: true,
                   items: [
@@ -49,7 +50,7 @@ export default defineConfig({
                   ]
                 },
                 {
-                  text: 'DAO Token Holders',
+                  text: '🗳️ DAO Token Holders',
                   link: '/os/borg/borg-types/devborg',
                   items: [
                     {
@@ -69,7 +70,7 @@ export default defineConfig({
               ]
             },
             {
-              text: 'BORG Types',
+              text: '📙 BORG Types',
               link: '/os/borg/borg-types',
               collapsed: true, 
               items: [
@@ -100,7 +101,7 @@ export default defineConfig({
       ],
     },
     {
-      text: 'Onchain BORGs',
+      text: '⛓️ Onchain BORGs',
       collapsed: false, 
       items: [ 
         {
