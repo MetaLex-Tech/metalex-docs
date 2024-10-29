@@ -15,13 +15,13 @@ export default defineConfig({
           link: '/',
         },
         {
-          text: '🔑 Key Terms',
-          link: '/os/key-terms',
-        },
-        {
-          text: '😎 Intro to BORGs',
+          text: '😎 What is a BORG?',
           link: '/os/dao/intro-to-borgs',
           items: []
+        },
+        {
+          text: '🔑 Key Terms',
+          link: '/os/key-terms',
         },
         {
           text: '💻 BORG Command Center',
