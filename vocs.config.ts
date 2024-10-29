@@ -7,11 +7,12 @@ export default defineConfig({
   sidebar: [
     {
       text: '🖖 MetaLeX OS',
+      link: '/',
       collapsed: false,
       items: [
         {
           text: '👋 Introduction',
-          link: '/os/metalex-os-intro',
+          link: '/',
         },
         {
           text: '🔑 Key Terms',
