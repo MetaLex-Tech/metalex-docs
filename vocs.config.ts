@@ -30,43 +30,40 @@ export default defineConfig({
             {
               text: '📝 "How-to" BORG',
               link: '/os/borg/how-to',
-              collapsed: false, 
+            },
+            {
+              text: '🤖 BORG Members',
+              link: '/os/borg/borg-types/grantsborg',
+              collapsed: false,
               items: [
                 {
-                  text: '🤖 BORG Members',
-                  link: '/os/borg/borg-types/grantsborg',
-                  collapsed: false,
-                  items: [
-                    {
-                      text: 'Propose a transaction',
-                    },
-                    {
-                      text: 'Manage members',
-                    },
-                    {
-                      text: 'Manage Documents',
-                    },
-                    
-                  ]
+                  text: 'Propose a transaction',
                 },
                 {
-                  text: '🗳️ DAO Token Holders',
-                  link: '/os/borg/borg-types/devborg',
-                  items: [
-                    {
-                      text: 'Initiate a DAO Vote',
-                      link: '/os/borg/borg-types/grantsborg',
-                    },
-                    {
-                      text: 'Eject a BORG member',
-                    },
-                    {
-                      text: 'Update a BORG\'s policy',
-                    },
-                    {
-                      text: 'Recover DAO funds',
-                    },
-                  ]
+                  text: 'Manage members',
+                },
+                {
+                  text: 'Manage Documents',
+                },
+                
+              ]
+            },
+            {
+              text: '🗳️ DAO Token Holders',
+              link: '/os/borg/borg-types/devborg',
+              items: [
+                {
+                  text: 'Initiate a DAO Vote',
+                  link: '/os/borg/borg-types/grantsborg',
+                },
+                {
+                  text: 'Eject a BORG member',
+                },
+                {
+                  text: 'Update a BORG\'s policy',
+                },
+                {
+                  text: 'Recover DAO funds',
                 },
               ]
             },
