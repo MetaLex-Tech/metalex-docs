@@ -24,6 +24,36 @@ export default defineConfig({
           link: '/os/key-terms',
         },
         {
+          text: '📙 BORG Types',
+          collapsed: true, 
+          items: [
+            {
+              text: 'Overview',
+              link: '/os/borg/borg-types',
+            }
+            {
+              text: 'grantsBORG',
+              link: '/os/borg/borg-types/grantsborg',
+            },
+            {
+              text: 'devBORG',
+              link: '/os/borg/borg-types/devborg',
+            },
+            {
+              text: 'securityBORG (coming soon)',
+              link: '/os/borg/borg-types/securityborg',
+            },
+            {
+              text: 'finBORG (coming soon)',
+              link: '/os/borg/borg-types/finborg',
+            },
+            {
+              text: 'genBORG (coming soon)',
+              link: '/os/borg/borg-types/genborg',
+            }
+          ]
+        },
+        {
           text: '💻 BORG Command Center',
           collapsed: false, 
           items: [
@@ -67,33 +97,6 @@ export default defineConfig({
             },
           ]
         },
-        {
-          text: '📙 BORG Types',
-          link: '/os/borg/borg-types',
-          collapsed: true, 
-          items: [
-            {
-              text: 'grantsBORG',
-              link: '/os/borg/borg-types/grantsborg',
-            },
-            {
-              text: 'devBORG',
-              link: '/os/borg/borg-types/devborg',
-            },
-            {
-              text: 'securityBORG (coming soon)',
-              link: '/os/borg/borg-types/securityborg',
-            },
-            {
-              text: 'finBORG (coming soon)',
-              link: '/os/borg/borg-types/finborg',
-            },
-            {
-              text: 'genBORG (coming soon)',
-              link: '/os/borg/borg-types/genborg',
-            }
-          ]
-        }
       ],
     },
     {
