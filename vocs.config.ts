@@ -24,8 +24,8 @@ export default defineConfig({
           link: '/os/key-terms',
         },
         {
-          text: '📙 BORG Types',
-          collapsed: true, 
+          text: '📋 BORG Types',
+          collapsed: false, 
           items: [
             {
               text: 'Overview',
@@ -62,7 +62,7 @@ export default defineConfig({
               link: '/os/borg/how-to',
             },
             {
-              text: '🤖 BORG Members',
+              text: '💼 BORG Members',
               collapsed: false,
               items: [
                 {
