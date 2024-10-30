@@ -30,7 +30,7 @@ export default defineConfig({
             {
               text: 'Overview',
               link: '/os/borg/borg-types',
-            }
+            },
             {
               text: 'grantsBORG',
               link: '/os/borg/borg-types/grantsborg',
