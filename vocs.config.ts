@@ -25,7 +25,6 @@ export default defineConfig({
         },
         {
           text: '💻 BORG Command Center',
-          link: '/os/borg/borg-landing',
           collapsed: false, 
           items: [
             {
