@@ -33,7 +33,6 @@ export default defineConfig({
             },
             {
               text: '🤖 BORG Members',
-              link: '/os/borg/borg-types/grantsborg',
               collapsed: false,
               items: [
                 {
@@ -50,7 +49,6 @@ export default defineConfig({
             },
             {
               text: '🗳️ DAO Token Holders',
-              link: '/os/borg/borg-types/devborg',
               items: [
                 {
                   text: 'Initiate a DAO Vote',
