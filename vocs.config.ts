@@ -12,7 +12,7 @@ export default defineConfig({
       items: [
         {
           text: '👋 Introduction',
-          link: '/os/dao/metalex-os-intro',
+          link: '/os/metalex-os-intro',
         },
         {
           text: '😎 What is a BORG?',
