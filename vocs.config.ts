@@ -12,12 +12,11 @@ export default defineConfig({
       items: [
         {
           text: '👋 Introduction',
-          link: '/',
+          link: '/os/dao/metalex-os-intro',
         },
         {
           text: '😎 What is a BORG?',
           link: '/os/dao/intro-to-borgs',
-          items: []
         },
         {
           text: '🔑 Key Terms',
@@ -40,15 +39,19 @@ export default defineConfig({
               link: '/os/borg/borg-types/devborg',
             },
             {
-              text: 'securityBORG (coming soon)',
+              text: 'securityBORG',
               link: '/os/borg/borg-types/securityborg',
             },
             {
-              text: 'finBORG (coming soon)',
+              text: 'finBORG',
               link: '/os/borg/borg-types/finborg',
             },
             {
-              text: 'genBORG (coming soon)',
+              text: 'genBORG',
+              link: '/os/borg/borg-types/genborg',
+            },
+            {
+              text: 'bzBORG',
               link: '/os/borg/borg-types/genborg',
             }
           ]

@@ -1,17 +1,42 @@
-# Intro to MetaLeX OS
+---
+content: 
+  width: 75%
+---
+import { CardGrid, Card, Callout } from "@components";
+import { LuShield } from "react-icons/lu";
+import { HiComputerDesktop } from "react-icons/hi2";
+import { LiaFileContractSolid } from "react-icons/lia";
 
-MetaLeX OS is the 'operating system' for cyBernetic ORGanizations, also as known as 'BORGs'--legal entities that are tightly coupled with blockchain technology to achieve  governance-accountable, trust-minimized, transaction-automated and legally optimized governance structures. 
+# ![Logo](/header.png)
+# 🖖 Welcome to MetaLeX OS
 
-MetaLeX OS consists of a system of BORG-optimized smart contracts, legal documents, offchain legal entity structures, and a web application for monitoring, operating and transacting with BORGs. 
+MetaLeX OS is the 'operating system' for cyBernetic ORGanizations, also as known as 'BORGs'--legal entities that are tightly coupled with blockchain technology to achieve governance-accountable, trust-minimized, transaction-automated and legally optimized governance structures.
 
-# MetaLeX Smart Contracts 
+MetaLeX OS consists of a system of BORG-optimized smart contracts, legal documents, offchain legal entity structures, and a web application for monitoring, operating and transacting with BORGs.
 
-MetaLeX OS's smart contracts consist of a series of cybernetic implants for standard Gnosis SAFEs that enable configuring each SAFE as a legally wrapped BORG enforcing offchain rules and establishing checks and balances between the BORG and other entities or smart contracts (particularly onchain DAOs). [Learn more] 
+**Jump right in**
 
-# MetaLeX Legal Docs and Structures
-
-MetaLeX OS's legal documents and legal structures consist of BORG Bylaws that establish the legal rules for the BORG and can be enshrined as part of the governance of any offchain legal entity, such as a Caymans foundation company. These legal structures achieve limited liability for members of the BORG (SAFE multisig signers and potentially other personnel), codiify the use of MetaLeX OS for the entity's governance and DAO-related activities, clarify the BORG's mission, prescribe transparency rules, and create accountability for abuses. [Learn more] 
-
-# MetaLeX Webapp
-
-The MetaLeX OS webapp provides the tooling and features to operate your BORG, provide critical transparency for your protocol, and enhance user participation in governance. With better UX for managing on and offchain operations including operational, grant, and governance features, MetaLeX OS strives to be the tool to help your protocol get more done. [Learn more] 
+<CardGrid>
+  <Card
+    title="Intro To Borgs"
+    link="/os/dao/intro-to-borgs"
+    icon={<LuShield />}
+  >
+    <span>
+        Primer on BORGs
+    </span>
+  </Card>
+  <Card
+   title="Command Center"
+   link="/os/borg/borg-implants/borg-implant"
+   icon={<HiComputerDesktop />}>
+    <span>
+      MetaLeX OS operating guide.
+    </span>
+  </Card>
+  <Card title="On Chain Contracts" link="/os/borg/borg-implants/borg-implant" icon={<LiaFileContractSolid />}>
+    <span>
+      Details on the smart contracts that power BORGs.
+    </span>
+  </Card>
+</CardGrid>
