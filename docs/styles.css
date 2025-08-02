@@ -8,5 +8,5 @@
   text-decoration: none !important;
   display: inline-flex;
   align-items: center;
-  @apply !text-brand-blue-700;
+  color: #287BAF;
 }

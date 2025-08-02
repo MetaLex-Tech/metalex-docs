@@ -8,30 +8,30 @@ import { CardGrid, Card, Callout } from "@components";
 
 # BORGCORE Modes
 
-The borgCore is the central hub for on chain BORGs. The main purpose of the borgCore is to the policy of which actions BORG members can take on chain. It extends the Gnosis Guard functionality.
+The borgCore is the central hub for on-chain BORGs. Its main purpose is to define the policy that governs which actions BORG members may take on chain. It extends the Gnosis Safe guard functionality.
 
 <CardGrid>
 
 **There are 3 types of BORG modes:**
-  <Card
-    title="Whitelist"
-    link="/os/borg/borg-implants/borg-implant"
-  >
-    <span>
-      ...
-    </span>
-  </Card>
     <Card
-    title="Blacklist"
-    link="/os/borg/borg-implants/borg-implant"
-  >
-    <span>
-      ...
-    </span>
-  </Card>
-  <Card title="Unrestricted" link="/os/borg/borg-implants/borg-implant">
-    <span>
-       ...
-    </span>
-  </Card>
-</CardGrid>
+      title="Whitelist"
+      link="/os/borg/borg-implants/borg-implant"
+    >
+      <span>
+        Only approved addresses or calldata may execute transactions.
+      </span>
+    </Card>
+      <Card
+      title="Blacklist"
+      link="/os/borg/borg-implants/borg-implant"
+    >
+      <span>
+        Transactions from listed addresses or calldata are blocked.
+      </span>
+    </Card>
+    <Card title="Unrestricted" link="/os/borg/borg-implants/borg-implant">
+      <span>
+        No allow or deny lists are enforced by the core.
+      </span>
+    </Card>
+  </CardGrid>
