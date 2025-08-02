@@ -33,5 +33,26 @@ The borgCore is the central hub for on-chain BORGs. Its main purpose is to defin
       <span>
         No allow or deny lists are enforced by the core.
       </span>
-    </Card>
-  </CardGrid>
+  </Card>
+</CardGrid>
+
+### Whitelist
+
+- All transactions are blocked unless explicitly pre‑approved.
+- Only designated recipients can receive native token transfers, each with optional per‑tx limits.
+- Calls are limited to whitelisted contracts and methods, with parameter constraints such as type, ranges or exact values.
+- Best for highly conservative BORGs holding significant value, like finBORGs or tightly controlled grants programs.
+
+### Blacklist
+
+- Transactions are permitted by default except those explicitly denied.
+- Addresses on the blacklist cannot receive transfers.
+- Contract calls or specific methods may be blocked unless parameters satisfy defined constraints.
+- Useful for trusted teams needing broad discretion while avoiding a short list of risky actions.
+
+### Unrestricted
+
+- No allow or deny lists are enforced.
+- Intended for BORGs where signers have full discretion but still want access to implants or MetaLeX tooling.
+
+Both whitelist and blacklist modes can enforce cooldown periods on certain calls to prevent spammy proposals or denial‑of‑service patterns.

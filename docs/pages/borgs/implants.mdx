@@ -6,7 +6,14 @@ content:
 
 # Implants
 
-Implants are plug-in modules for the BORG core. They extend functionality by adding extra checks or execution steps before a transaction is approved.
+Implants are plug-in SAFE Modules for the BORG core. They pair a `ConditionManager` with a `BorgAuth` contract so outside accounts or smart contracts can influence the BORG under programmable rules. Implants can add extra checks or execute transactions on behalf of the BORG when conditions are satisfied.
 
-Common implants include token gating, delay modules, and DAO-based veto mechanisms. Each implant can evaluate [conditions](/borgs/conditions) to tailor policy.
+Examples include:
+
+- **OptimisticGrant implant** – allows a GrantsBORG to issue grants within rate limits and submits oversized grants to a DAO timelock and veto process.
+- **DAO veto implants** – provide a timelock plus veto mechanism for exceptions to preset policies.
+- **eject implant** – lets a signer resign or be removed by the DAO, supporting rapid key rotation.
+- **failSafe implant** – redirects funds to a predefined address if signer thresholds fall below a safe minimum.
+
+Each implant can evaluate [conditions](/borgs/conditions) such as signatures, time delays, token balances or oracle inputs to tailor policy.
 
