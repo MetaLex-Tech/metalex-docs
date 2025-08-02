@@ -1,0 +1,39 @@
+---
+showOutline: false
+content:
+  width: 75%
+---
+
+# LeXscroW
+
+LeXscroW is an ownerless, condition‑based escrow system used by BORGs to enforce on‑chain deal logic. Escrows are deployed without an admin, and their release conditions are immutable once set. Contracts are non‑custodial—the funds remain in escrow until predefined rules resolve them.
+
+## Core Features
+
+- **Ownerless deployment** – contracts have no privileged account after creation.
+- **Immutable conditions** – execution rules can reference signatures, time windows or oracle data and cannot be changed after deployment.
+- **Flexible depositors** – escrows may restrict who can deposit or allow open participation with optional post‑deposit rejection.
+- **Automatic refunds** – deposits return to senders if conditions fail or the escrow expires.
+- **Composable** – BORGs can pair LeXscroW with implants or MetaVesT for richer deal logic.
+
+## Execution Flow
+
+1. Parties deposit tokens into the escrow contract.
+2. Anyone may trigger execution once all conditions are satisfied, releasing funds to their counterparties.
+3. If the escrow expires or a depositor is rejected, a refund function returns the assets.
+
+## Contract Types
+
+- **DoubleTokenLeXscroW** – bilateral escrow for two ERC20 tokens; each side deposits the agreed amount and receives the other's tokens when conditions clear.
+- **TokenLeXscroW** – unilateral escrow for a single ERC20 token with refund capability; useful for token sales or milestone releases.
+- **EthLeXscroW** – native token variant handling ETH or other gas tokens with the same ruleset.
+
+## Example Uses
+
+- Trustless token swaps between BORGs or DAOs.
+- Funding milestones where a DAO releases tokens to a GrantsBORG as progress is verified.
+- Cross‑DAO collaborations that pool resources and release them only when shared conditions are met.
+- M&A escrows that swap governance tokens after both communities approve.
+- Social bets, such as KOL wagers resolved by an oracle feed.
+
+[Source code and audits](https://github.com/MetaLex-Tech/LeXscroW) are available for teams that need deeper integration details.

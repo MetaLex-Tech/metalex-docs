@@ -6,7 +6,13 @@ content:
 
 # BORG Core
 
-[`borg-core`](https://github.com/MetaLex-Tech/borg-core) is the on-chain policy engine that powers MetaLeX BORGs. It extends the Gnosis Safe guard and enforces which actions members may execute.
+[`borg-core`](https://github.com/MetaLex-Tech/borg-core) is the on-chain policy engine that powers MetaLeX BORGs. It combines a SAFE Guard with the standard ERC‑4824 DAO interface, making it the "heart" of every BORG on MetaLeX OS. The core manages high‑level policy, determining which actions multisig members may execute and how outside authorities interact with the BORG.
+
+## Architecture
+
+- **Immutable modes** – each core is deployed in whitelist, blacklist or unrestricted mode. The mode cannot be changed after deployment.
+- **BorgAuth** – optional access control that specifies who can modify core settings or implants.
+- **Implants** – SAFE Modules that plug into the core to add features such as optimistic grants, timelocks or signer ejections.
 
 ## Getting Started
 
