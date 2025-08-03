@@ -159,11 +159,11 @@ export default defineConfig({
           ],
         },
         {
-          text: 'MetaVesT',
+          text: '⏳ MetaVesT',
           link: '/metavest',
         },
         {
-          text: 'LeXscroW',
+          text: '🤝 LeXscroW',
           link: '/lexscrow',
         },
       ],
