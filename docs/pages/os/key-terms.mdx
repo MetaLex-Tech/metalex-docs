@@ -19,7 +19,7 @@ There is no clear consensus about what a “DAO” is and how it should be defin
 MetaLeX OS can plug-and-play with any of these conceptions, but the MetaLeX team prefers sticking to the literal meaning of the acronym “D.A.O.” — i.e., that DAOs must be decentralized and autonomous organizations, where:
  * “Autonomous” means self-governing, trust-minimized and resistant to extrinsic exercises of power. 
  * “Decentralized” means that any residual human discretion (i.e., intrinsic modalities of power) are systematically dispersed over a large, agile, and potentially anonymous group of incentive-aligned persons.
- * "Organization" refers to whatever structures or people are organized through the relevant auotnomous decentralized technologies. 
+ * "Organization" refers to whatever structures or people are organized through the relevant autonomous decentralized technologies.
 
 Put more simply, we view DAOs as limited-programmability robots where the limited programmability power is widely dispersed among users who can only adjust the program in accordance with hard-coded meta-programming rules.
 
@@ -27,11 +27,11 @@ The riskiest liability vectors that could be associated with DAOs (clearly comme
 
 ## Directors ### 
 
-Directors are individuals or entities with supervisory and/or operational authority over a legal entity. The exact scope and mechanisms through which directors manage an entity vary dependingon the entity type, jurisdiction, and the entity's specific rules (especially Bylaws). In the context of BORGs, directors are likely to be owners of private-key-signers on one or more SAFEs/multisigs included in the BORG. MetaLeX OS recognizes a specific 'director role' within multisigs, which is basically a subset of signers a majority of whom *must* approve a given transaction for it to execute. 
+Directors are individuals or entities with supervisory and/or operational authority over a legal entity. The exact scope and mechanisms through which directors manage an entity vary depending on the entity type, jurisdiction, and the entity's specific rules (especially Bylaws). In the context of BORGs, directors are likely to be owners of private-key-signers on one or more SAFEs/multisigs included in the BORG. MetaLeX OS recognizes a specific 'director role' within multisigs, which is basically a subset of signers a majority of whom *must* approve a given transaction for it to execute.
 
 ## Guardians ### 
 
-Guardian is a role with no well-defined corporate precedent, but was created as a hybrid entity/SAFE role specifically for BORGs. Guardians are members of a SAFE/multisig within a BORG that are on the SAFE primarily to provide additional security (through wider distribution of private keys/signing power) or quality control and compliance checks, but do not have authorities/powers as broad as those of directors. Part of the reason for having the guardian role is that the KYC/AML and compliance obligations of a legtal entity's directors may be very high, meaning that it is hard to obtain a large number of directors to serve on a BORG, but, meanwhile, for reasons of increasing the security of tokens held by a SAFE, it is desirable to have a greater number of private key holders to lower the risk of 'wrench attacks' and other physical attacks as well as loss of keys or unavailability/downtime of signers in an emergency. A BORG's SAFE/multisig may therefore be required to require the approval of both a majority of the directors and some minimum number of guardians before a transatcion will execute from the SAFE/multisig. 
+Guardian is a role with no well-defined corporate precedent, but was created as a hybrid entity/SAFE role specifically for BORGs. Guardians are members of a SAFE/multisig within a BORG that are on the SAFE primarily to provide additional security (through wider distribution of private keys/signing power) or quality control and compliance checks, but do not have authorities/powers as broad as those of directors. Part of the reason for having the guardian role is that the KYC/AML and compliance obligations of a legal entity's directors may be very high, meaning that it is hard to obtain a large number of directors to serve on a BORG, but, meanwhile, for reasons of increasing the security of tokens held by a SAFE, it is desirable to have a greater number of private key holders to lower the risk of 'wrench attacks' and other physical attacks as well as loss of keys or unavailability/downtime of signers in an emergency. A BORG's SAFE/multisig may therefore be required to require the approval of both a majority of the directors and some minimum number of guardians before a transaction will execute from the SAFE/multisig.
 
 ## Legal Entity ### 
 
@@ -39,11 +39,11 @@ A legal entity is an organization that is given independent personhood through t
 
 ## Multisig aka SAFE ###
 
-See [SAFE aka Multisig below](). 
+See [SAFE aka Multisig below](#safe-aka-multisig).
 
 ## SAFE aka Multisig ###
 
-SAFEs, aka multisigs or 'smart accounts' are smart contracts implementing [the Gnosis SAFE source code](https://github.com/safe-global/safe-smart-account). These are smart contract multi-sig 'wallets' running on Ethereum that require a minimum number of private key signatures (corresponding to public addresses on Ehtereum) to approve a transaction before it can be executed by the smart contract. Typically in the BORG context, each public/private key address is owned/controlled by a different human individual. 
+SAFEs, aka multisigs or 'smart accounts' are smart contracts implementing [the Gnosis SAFE source code](https://github.com/safe-global/safe-smart-account). These are smart contract multi-sig 'wallets' running on Ethereum that require a minimum number of private key signatures (corresponding to public addresses on Ethereum) to approve a transaction before it can be executed by the smart contract. Typically in the BORG context, each public/private key address is owned/controlled by a different human individual.
 
 ## SAFE Guard ###
 
@@ -72,3 +72,4 @@ LeXscroW is a suite of ownerless, condition-driven escrow contracts. Escrows enf
 ## MetaVesT ###
 
 MetaVesT is an advanced vesting and token lockup protocol. It enables dual vesting and unlocking curves, option-style grants, group amendments and milestone-based releases while ensuring vested tokens cannot be rugged without consent.
+

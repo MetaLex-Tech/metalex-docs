@@ -1,174 +1,60 @@
 ---
 showOutline: false
-content: 
+content:
     width: 75%
 ---
-
-import { CardGrid, Card, Callout } from "@components";
+import { CardGrid, Card } from "@components";
 
 # BORG Types
 
-BORGs lend themselves to an almost infinite number of uses and configurations. Here we give a few examples.
+BORGs lend themselves to an almost infinite number of uses and configurations. Here are a few examples.
 
 <CardGrid>
-  <Card
-    title=">./grantsBORG"
-    link="/os/borg/borg-types/grantsborg"
-  >
-    <span>
-      grantsBORGS are BORGs that manage grants and donations for a DAO or protocol.
-    </span>
+  <Card title="grantsBORG" link="/os/borg/borg-types/grantsborg">
+    <span>Manage grants and donations for a DAO or protocol.</span>
   </Card>
-    <Card title=">./securityBORG" link="/os/borg/borg-types/secborg">
-    <span>
-      securityBORGs wrap emergency/security multisigs to respond to critical events. 
-    </span>
+  <Card title="securityBORG" link="/os/borg/borg-types/securityborg">
+    <span>Wrap emergency multisigs to handle critical events.</span>
   </Card>
-  <Card title=">./ipBORG" link="/os/borg/borg-types/ipborg">
-    <span>
-      ipBORGs manage and protect the intellectual property assets associated with a DAO.
-    </span>
+  <Card title="ipBORG" link="/os/borg/borg-types/ipborg">
+    <span>Oversee intellectual property for a DAO.</span>
   </Card>
-  <Card title=">./finBORG" link="/os/borg/borg-types/finborg">
-    <span>
-      finBORGs handle protocol beneficial value (PBV) and token management operations.
-    </span>
+  <Card title="finBORG" link="/os/borg/borg-types/finborg">
+    <span>Handle protocol-beneficial value and treasury operations.</span>
   </Card>
-  <Card title=">./genBORG" link="/os/borg/borg-types/genborg">
-    <span>
-      genBORGs are general purpose BORGs that can be used for a wide variety of purposes.
-    </span>
+  <Card title="allianceBORG" link="/os/borg/borg-types/allianceborg">
+    <span>Coordinate aligned token holdings and partnerships.</span>
   </Card>
-    <Card title=">./bizBORG" link="/os/borg/borg-types/bizborg">
-    <span>
-      bizBORGs (also known as cyberCORPs) are onchain corporations, including securitized entities.
-    </span>
+  <Card title="genBORG" link="/os/borg/borg-types/genborg">
+    <span>General-purpose BORG for human-in-the-loop functions.</span>
+  </Card>
+  <Card title="bizBORG" link="/os/borg/borg-types/bizborg">
+    <span>Onchain corporations, also known as cyberCORPs.</span>
   </Card>
 </CardGrid>
 
-With MetaLeX's modular design, grantBORGs can use any onchain Implant to add functionality to enhance or customize the BORG to your needs.
+## BORG Implants
 
-**BORG Implants**
+MetaLeX's modular design lets any BORG use onchain implants to enhance or customize its capabilities.
 
 <CardGrid>
-  <Card
-    title="FailSafe_Implant"
-    link="/borgs/implants/fail-safe"
-  >
-    <span>
-      Protect the funds in your BORG. Handles recovery and DAO oversight.
-    </span>
+  <Card title="FailSafe_Implant" link="/borgs/implants/fail-safe">
+    <span>Protect funds with recovery and DAO oversight.</span>
   </Card>
-  <Card title="Eject_Implant" link="/os/borg/borg-types/devborg">
-    <span>
-      Manage BORG Members. Also allows self-ejecting from a Safe/BORG.
-    </span>
+  <Card title="Eject_Implant" link="/borgs/implants/eject">
+    <span>Manage members or allow self-ejection from a SAFE.</span>
   </Card>
-  <Card title="DAOVote_Implant" link="/os/borg/borg-types/secborg">
-    <span>
-     Enable DAO voting with any governance mechanism w/ custom controls.
-    </span>
+  <Card title="OptimisticGrant_Implant" link="/borgs/implants/optimistic-grant">
+    <span>Create preapproved grants with rate limits.</span>
   </Card>
-  <Card title="DAOVeto_Implant" link="/os/borg/borg-types/genborg">
-    <span>
-      Enable time-based proposals vetoable by the DAO w/ custom controls
-    </span>
+  <Card title="DAOVoteGrant_Implant" link="/borgs/implants/dao-vote-grant">
+    <span>Require DAO voting co-approval for grants.</span>
   </Card>
-  <Card title="MetaVesT_Implant" link="/os/borg/borg-types/finborg">
-    <span>
-      Unlock powerful vesting onchain contracts. Dual vesting 
-    </span>
+  <Card title="DAOVetoGrant_Implant" link="/borgs/implants/dao-veto-grant">
+    <span>Add time-delay grants that the DAO can veto.</span>
   </Card>
-    <Card title="OtimisticGrant_Implant" link="/os/borg/borg-types/bizborg">
-    <span>
-      Create preapproved grants with rate limits and other controls.
-    </span>
-  </Card>
-    <Card title="DAOVoteGrant_Implant" link="/os/borg/borg-types/bizborg">
-    <span>
-      Create grants with required DAO voting co-approval.
-    </span>
-  </Card>
-    <Card title="DAOVetoGrant_Implant" link="/os/borg/borg-types/bizborg">
-    <span>
-      Create grants with time delay vetoable by the DAO.
-    </span>
-  </Card>
-    <Card title="+ Custom Implants to fit your specialized needs" link="/os/borg/borg-types/bizborg">
-    <span>
-      Learn More.
-    </span>
+  <Card title="MetaVesT" link="/borgs/metavest">
+    <span>Advanced vesting and token lockup toolkit.</span>
   </Card>
 </CardGrid>
 
-
-### Borg Implants
-
-<CardGrid>
-  <Card
-    title="Borg Implant"
-    link="/os/borg/borg-implants/borg-implant"
-  >
-    <span>
-      Borg Implants are SAFE Modules included in MetaLeX OS and designed to make
-      SAFEs function as parts of BORGs.
-    </span>
-  </Card>
-  <Card title="Borg Implant" link="/os/borg/borg-implants/borg-implant">
-    <span>
-      Borg Implants are SAFE Modules included in MetaLeX OS and designed to make
-      SAFEs function as parts of BORGs.
-    </span>
-  </Card>
-  <Card title="Borg Implant" link="/os/borg/borg-implants/borg-implant">
-    <span>
-      Borg Implants are SAFE Modules included in MetaLeX OS and designed to make
-      SAFEs function as parts of BORGs.
-    </span>
-  </Card>
-  <Card title="Borg Implant" link="/os/borg/borg-implants/borg-implant">
-    <span>
-      Borg Implants are SAFE Modules included in MetaLeX OS and designed to make
-      SAFEs function as parts of BORGs.
-    </span>
-  </Card>
-  <Card title="Borg Implant" link="/os/borg/borg-implants/borg-implant">
-    <span>
-      Borg Implants are SAFE Modules included in MetaLeX OS and designed to make
-      SAFEs function as parts of BORGs.
-    </span>
-  </Card>
-</CardGrid>
-
-
-fin-BORGs or pbv-BORGs
-finBORGs run the 'finance operations' adjacent to a DAO or protocol. These include managing liquidity incentives like Lido's [LOL multisig](https://research.lido.fi/t/liquidity-observation-lab-lol-liquidity-strategy-and-application-to-curve-steth-eth-pool/5335/7), or arrangeements closer to OlympusDAO/DeFi 2.0 style 'protocol-owned liquidity' arrangements (which we at MetaleX instead refer to as 'protocol-beneficial value' when it is owned/managed by a BORG).
-
-alliiance-BORGs
-Alliance BORGs hold and manage token positions of aligned communities/strategic partners and manage those relationships.
-
-An example is the [Lido Alliance BORG](https://research.lido.fi/t/organize-the-lido-alliance-program-as-a-lido-dao-adjacent-borg/8173)
-
-IP-BORGs
-Intellectual Property (IP) BORGs manage and protect the intellectual property assets associated with a DAO, such as patents, trademarks, copyrights, and trade secrets. These BORGs work to ensure that the DAO’s IP is properly registered, maintained, and enforced, while also respecting the rights of others in the ecosystem. IP BORGs also play a crucial role in negotiating licensing agreements, partnerships, and other arrangements that involve the sharing or transfer of intellectual property rights. This helps to foster innovation, collaboration, and the responsible use of IP within the decentralized ecosystem.
-
-
-<Callout>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nunc
-  euismod, elit nisi luctus nunc, euismod euismod nisi luctus nunc.
-</Callout>
-
-<Callout type="warning">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nunc
-  euismod, elit nisi luctus nunc, euismod euismod nisi luctus nunc.
-</Callout>
-
-<Callout type="security">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nunc
-  euismod, elit nisi luctus nunc, euismod euismod nisi luctus nunc.
-</Callout>
-
-<Callout type="check">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nunc
-  euismod, elit nisi luctus nunc, euismod euismod nisi luctus nunc.
-</Callout>
