@@ -19,7 +19,7 @@ export default defineConfig({
         },
         {
           text: '🤖 BORGs',
-          collapsed: false,
+          collapsed: true,
           items: [
             {
               text: '😎 What is a BORG?',
@@ -32,7 +32,7 @@ export default defineConfig({
             {
               text: 'BORG Modes',
               link: '/os/borg/borg-modes',
-              collapsed: false,
+              collapsed: true,
               items: [
                 {
                   text: 'Unrestricted',
@@ -81,7 +81,7 @@ export default defineConfig({
             },
             {
               text: '📋 BORG Types',
-              collapsed: false,
+              collapsed: true,
               items: [
                 {
                   text: 'Overview',
@@ -115,7 +115,7 @@ export default defineConfig({
             },
             {
               text: '💻 BORG Command Center',
-              collapsed: false,
+              collapsed: true,
               items: [
                 {
                   text: '📝 "How-to" BORG',
@@ -123,7 +123,7 @@ export default defineConfig({
                 },
                 {
                   text: '💼 BORG Members',
-                  collapsed: false,
+                  collapsed: true,
                   items: [
                     {
                       text: 'Propose a transaction',
@@ -138,6 +138,7 @@ export default defineConfig({
                 },
                 {
                   text: '🗳️ DAO Token Holders',
+                  collapsed: true,
                   items: [
                     {
                       text: 'Initiate a DAO Vote',
@@ -172,7 +173,7 @@ export default defineConfig({
         },
         {
           text: '⚖️ Cybernetic Law',
-          collapsed: false,
+          collapsed: true,
           items: [
             {
               text: 'Intro to Cybernetic Law',
