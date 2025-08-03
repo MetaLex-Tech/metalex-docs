@@ -1,0 +1,34 @@
+---
+showOutline: false
+content:
+  width: 75%
+---
+
+# What is Cybernetic Law?
+
+MetaLeX defines **cybernetic law** as the fusion of legal agreements with autonomous technologies so that code and law operate as a single system. The approach evolves beyond traditional, paper‑centric contracting by embedding references to onchain data structures and smart contracts directly in legal templates. The goal is to create an internet of agreements that are modular, composable and verifiable without reliance on closed platforms.
+
+## Why conventional legal tech falls short
+
+Mainstream contract automation tools live in centralized walled gardens that are closed‑source, non‑composable and optimized for humans to read static PDFs. Templates are hidden, and users interact through rigid questionnaires that output documents stored on proprietary servers. This hides important choices and stifles the open standardization that drove forms like the Y‑Combinator SAFE or NVCA model documents.
+
+## The MetaLeX alternative
+
+MetaLeX develops public **cybernetic law templates** that explicitly reference smart contracts and other onchain artifacts. Parties select parameters and sign the agreement directly from their wallets, with selections stored onchain. Anyone can reconstruct the human‑readable text by combining the IPFS‑hosted template with the onchain data, eliminating vendor lock‑in and enabling any interface to present the agreement in a traditional layout.
+
+This method has already been used for a BORG Participation Agreement and the Cybernetic Token Exchange Agreement (CyTEA). Looking forward, the team envisions optional privacy layers, tokenized representations of contractual rights and obligations, more natural language reconstruction, and fully formalized, machine‑generatable agreements.
+
+## Ricardian Triplers
+
+To tie legal prose and enforcement code together, MetaLeX introduced the **Ricardian Tripler**. A tripler bundles three components:
+
+1. **Code** – a specific smart contract deployed at a known address.
+2. **Legal text** – a standard form agreement referencing the smart contract.
+3. **Parameters** – the negotiated values that instantiate both the text and the code.
+
+By signing a single onchain transaction, parties populate the parameters, adopt the legal text and deploy the enforcing contract. Our initial implementation targets double‑token LeXscroW swaps, pairing a legal agreement with a non‑custodial escrow that cannot execute unless both parties sign. Supporting contracts like `AgreementV1Factory`, `DoubleTokenLexscrowRegistry` and `SignatureValidator` manage proposal, confirmation and signature verification, creating an end‑to‑end onchain deal lifecycle without dependence on centralized SaaS.
+
+## Toward lex cryptographia
+
+The MetaLeX vision paper argues that autonomous technologies are creating _de facto_ persons outside traditional state approval. Yet humans remain in the loop, and disputes still require norms of evidence and accountability. Rather than reverting to ad hoc “rule of men,” MetaLeX seeks a cryptonative rule of law—**lex cryptographia**—where code handles deterministic functions and legal mechanisms constrain human discretion. Cybernetic law templates and Ricardian Triplers are early building blocks toward that system.
+
