@@ -26,6 +26,10 @@ export default defineConfig({
                 link: '/borg/intro-to-borgs',
             },
             {
+              text: 'Legal Approach',
+                link: '/borg/legal-approach',
+            },
+            {
               text: 'borgCORE',
                 link: '/borg/borg-core',
             },
