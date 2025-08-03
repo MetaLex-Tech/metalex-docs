@@ -14,5 +14,7 @@ make build     # create production build
 make preview   # preview the production build
 ```
 
-The make targets clear proxy related environment variables before invoking
-npm, eliminating warnings such as `Unknown env config "http-proxy"`.
+The make targets call `scripts/npm.sh`, which clears proxy-related
+environment variables before invoking `npm`. This eliminates warnings such as
+`Unknown env config "http-proxy"`. You can also run the wrapper directly, for
+example `./scripts/npm.sh test`.

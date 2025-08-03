@@ -1,13 +1,13 @@
-NPM_ENV := npm_config_http_proxy= npm_config_https_proxy=
+NPM := ./scripts/npm.sh
 
 install:
-	$(NPM_ENV) npm install
+	$(NPM) install
 
 build:
-	$(NPM_ENV) npm run build
+	$(NPM) run build
 
 dev:
-	$(NPM_ENV) npm run dev
+	$(NPM) run dev
 
 preview:
-	$(NPM_ENV) npm run preview
+	$(NPM) run preview
