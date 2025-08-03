@@ -51,8 +51,8 @@ export default defineConfig({
               link: '/os/borg/borg-types/genborg',
             },
             {
-              text: 'bzBORG',
-              link: '/os/borg/borg-types/bzborg',
+              text: 'bizBORG (cyberCORP)',
+              link: '/os/borg/borg-types/bizborg',
             }
           ]
         },
