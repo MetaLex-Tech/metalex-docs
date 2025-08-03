@@ -52,7 +52,7 @@ export default defineConfig({
             },
             {
               text: 'bzBORG',
-              link: '/os/borg/borg-types/genborg',
+              link: '/os/borg/borg-types/bzborg',
             }
           ]
         },
@@ -120,9 +120,9 @@ export default defineConfig({
           collapsed: false,
           items: [
             {
-            text: 'Unrestricted',
-            link: '/borgs/borg-modes/Unrestricted',
-          },
+              text: 'Unrestricted',
+              link: '/borgs/borg-modes/unrestricted',
+            },
           {
             text: 'Blacklist',
             link: '/borgs/borg-modes/blacklist',
