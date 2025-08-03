@@ -4,11 +4,7 @@ import path from 'path';
 export default defineConfig({
   title: 'MetaLeX OS Docs',
   sidebar: [
-    {
-      text: '🖖 MetaLeX OS',
-      link: '/',
-      collapsed: false,
-      items: [
+
         {
           text: '👋 Introduction',
           link: '/os/metalex-os-intro',
@@ -181,8 +177,6 @@ export default defineConfig({
             },
           ],
         },
-      ],
-    },
   ],
   vite: {
     resolve: {
