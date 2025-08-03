@@ -6,11 +6,11 @@ content:
 
 # DAO Veto Grant
 
-Grants are queued for execution but may be cancelled by a DAO veto within a set period.
+Queues grant transactions and lets the DAO cancel them during a defined veto window before automatic execution by the BORG core.
 
-- After a grant transaction is proposed, it enters a timelock managed by the implant.
-- Token holders or guardians can submit a veto during the delay.
-- If the veto window closes without action, the queued grant executes automatically from the BORG core.
+- When a grant is proposed, the implant places it in a timelock.
+- Token holders or guardians may submit a veto while the timelock is active.
+- If no veto arrives before the window closes, the grant executes through the BORG core.
 
-This pattern balances fast grant approval with a last‑resort safety valve controlled by the broader DAO.
+The veto window provides a final safeguard without slowing routine approvals.
 
