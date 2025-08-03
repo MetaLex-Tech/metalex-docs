@@ -159,6 +159,10 @@ export default defineConfig({
           ],
         },
         {
+          text: '🏢 cyberCORPs',
+          link: '/cybercorps',
+        },
+        {
           text: '⏳ MetaVesT',
           link: '/metavest',
         },
