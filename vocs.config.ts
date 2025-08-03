@@ -166,18 +166,18 @@ export default defineConfig({
           text: '🤝 LeXscroW',
           link: '/lexscrow',
         },
-      ],
-    },
-    {
-      text: '⚖️ Cybernetic Law',
-      collapsed: false,
-      items: [
         {
-          text: 'Intro to Cybernetic Law',
-          link: '/cybernetic-law/intro-to-cybernetic-law',
+          text: '⚖️ Cybernetic Law',
+          collapsed: false,
+          items: [
+            {
+              text: 'Intro to Cybernetic Law',
+              link: '/cybernetic-law/intro-to-cybernetic-law',
+            },
+          ],
         },
       ],
-    }
+    },
   ],
   vite: {
     resolve: {
