@@ -13,57 +13,27 @@ Security BORGs wrap emergency/security multisigs to respond to critical events. 
 One example is Curve's ['emergency DAO'](https://resources.curve.fi/governance/understanding-governance/#emergency-dao) (which we at MetaLeX would preferably refer to as an 'emergency BORG' instead).
 </Callout>
 
-With MetaLeX's modular design, grantBORGs can use any onchain Implant to add functionality to enhance or customize the BORG to your needs.
+With MetaLeX's modular design, securityBORGs can use onchain implants to enhance or customize the BORG to their needs.
 
 **BORG Implants**
 
 <CardGrid>
-  <Card
-    title="FailSafe_Implant"
-    link="/borgs/implants/fail-safe"
-  >
-    <span>
-      Protect the funds in your BORG. Handles recovery and DAO oversight.
-    </span>
+  <Card title="FailSafe_Implant" link="/borgs/implants/fail-safe">
+    <span>Protect funds with recovery and DAO oversight.</span>
   </Card>
-  <Card title="Eject_Implant" link="/os/borg/borg-types/devborg">
-    <span>
-      Manage BORG Members. Also allows self-ejecting from a Safe/BORG.
-    </span>
+  <Card title="Eject_Implant" link="/borgs/implants/eject">
+    <span>Manage members or allow self-ejection from a SAFE/BORG.</span>
   </Card>
-  <Card title="DAOVote_Implant" link="/os/borg/borg-types/secborg">
-    <span>
-     Enable DAO voting with any governance mechanism w/ custom controls.
-    </span>
+  <Card title="OptimisticGrant_Implant" link="/borgs/implants/optimistic-grant">
+    <span>Create preapproved grants with rate limits.</span>
   </Card>
-  <Card title="DAOVeto_Implant" link="/os/borg/borg-types/genborg">
-    <span>
-      Enable time-based proposals vetoable by the DAO w/ custom controls
-    </span>
+  <Card title="DAOVoteGrant_Implant" link="/borgs/implants/dao-vote-grant">
+    <span>Require DAO voting co-approval for grants.</span>
   </Card>
-  <Card title="MetaVesT_Implant" link="/os/borg/borg-types/finborg">
-    <span>
-      Unlock powerful vesting onchain contracts. Dual vesting 
-    </span>
+  <Card title="DAOVetoGrant_Implant" link="/borgs/implants/dao-veto-grant">
+    <span>Add time-delay grants that the DAO can veto.</span>
   </Card>
-    <Card title="OtimisticGrant_Implant" link="/os/borg/borg-types/bizborg">
-    <span>
-      Create preapproved grants with rate limits and other controls.
-    </span>
-  </Card>
-    <Card title="DAOVoteGrant_Implant" link="/os/borg/borg-types/bizborg">
-    <span>
-      Create grants with required DAO voting co-approval.
-    </span>
-  </Card>
-    <Card title="DAOVetoGrant_Implant" link="/os/borg/borg-types/bizborg">
-    <span>
-      Create grants with time delay vetoable by the DAO.
-    </span>
-  </Card>
-    <Card title="+ Custom Implants to fit your specialized needs" link="/os/borg/borg-types/bizborg">
-    <span>
-      Learn More.
-    </span>
+  <Card title="MetaVesT" link="/borgs/metavest">
+    <span>Advanced vesting and token lockup toolkit.</span>
   </Card>
 </CardGrid>
