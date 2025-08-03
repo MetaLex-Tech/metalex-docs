@@ -19,7 +19,7 @@ export default defineConfig({
           items: [
             {
               text: '😎 What is a BORG?',
-                link: '/dao/intro-to-borgs',
+                link: '/borg/intro-to-borgs',
             },
             {
               text: 'borgCORE',
