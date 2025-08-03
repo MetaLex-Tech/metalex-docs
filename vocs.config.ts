@@ -1,6 +1,5 @@
 import { defineConfig } from 'vocs'
 import path from 'path';
-import { FaRegHandSpock } from "react-icons/fa6";
 
 export default defineConfig({
   title: 'MetaLeX OS Docs',
@@ -15,144 +14,157 @@ export default defineConfig({
           link: '/os/metalex-os-intro',
         },
         {
-          text: '😎 What is a BORG?',
-          link: '/os/dao/intro-to-borgs',
-        },
-        {
           text: '🔑 Key Terms',
           link: '/os/key-terms',
         },
         {
-          text: 'borgCORE',
-          link: '/os/borg/borg-core',
-        },
-        {
-          text: 'BORG Modes',
-          link: '/os/borg/borg-modes',
+          text: '🤖 BORGs',
           collapsed: false,
           items: [
             {
-              text: 'Unrestricted',
-              link: '/os/borg/borg-modes/unrestricted',
+              text: '😎 What is a BORG?',
+              link: '/os/dao/intro-to-borgs',
             },
             {
-              text: 'Blacklist',
-              link: '/os/borg/borg-modes/blacklist',
+              text: 'borgCORE',
+              link: '/os/borg/borg-core',
             },
             {
-              text: 'Whitelist',
-              link: '/os/borg/borg-modes/whitelist',
-            },
-          ],
-        },
-        {
-          text: 'Implants',
-          link: '/os/borg/implants',
-          collapsed: true,
-          items: [
-            {
-              text: 'FailSafe',
-              link: '/os/borg/implants/fail-safe',
-            },
-            {
-              text: 'Eject',
-              link: '/os/borg/implants/eject',
-            },
-            {
-              text: 'Optimistic Grant',
-              link: '/os/borg/implants/optimistic-grant',
-            },
-            {
-              text: 'DAO Veto Grant',
-              link: '/os/borg/implants/dao-veto-grant',
-            },
-            {
-              text: 'DAO Vote Grant',
-              link: '/os/borg/implants/dao-vote-grant',
-            },
-          ],
-        },
-        {
-          text: 'Conditions',
-          link: '/os/borg/conditions',
-        },
-        {
-          text: '📋 BORG Types',
-          collapsed: false,
-          items: [
-            {
-              text: 'Overview',
-              link: '/os/borg/borg-types',
-            },
-            {
-              text: 'grantsBORG',
-              link: '/os/borg/borg-types/grantsborg',
-            },
-            {
-              text: 'devBORG',
-              link: '/os/borg/borg-types/devborg',
-            },
-            {
-              text: 'securityBORG',
-              link: '/os/borg/borg-types/securityborg',
-            },
-            {
-              text: 'finBORG',
-              link: '/os/borg/borg-types/finborg',
-            },
-            {
-              text: 'genBORG',
-              link: '/os/borg/borg-types/genborg',
-            },
-            {
-              text: 'bizBORG (cyberCORP)',
-              link: '/os/borg/borg-types/bizborg',
-            }
-          ]
-        },
-        {
-          text: '💻 BORG Command Center',
-          collapsed: false, 
-          items: [
-            {
-              text: '📝 "How-to" BORG',
-              link: '/os/borg/how-to',
-            },
-            {
-              text: '💼 BORG Members',
+              text: 'BORG Modes',
+              link: '/os/borg/borg-modes',
               collapsed: false,
               items: [
                 {
-                  text: 'Propose a transaction',
+                  text: 'Unrestricted',
+                  link: '/os/borg/borg-modes/unrestricted',
                 },
                 {
-                  text: 'Manage members',
+                  text: 'Blacklist',
+                  link: '/os/borg/borg-modes/blacklist',
                 },
                 {
-                  text: 'Manage Documents',
+                  text: 'Whitelist',
+                  link: '/os/borg/borg-modes/whitelist',
                 },
-                
-              ]
+              ],
             },
             {
-              text: '🗳️ DAO Token Holders',
+              text: 'Implants',
+              link: '/os/borg/implants',
+              collapsed: true,
               items: [
                 {
-                  text: 'Initiate a DAO Vote',
+                  text: 'FailSafe',
+                  link: '/os/borg/implants/fail-safe',
+                },
+                {
+                  text: 'Eject',
+                  link: '/os/borg/implants/eject',
+                },
+                {
+                  text: 'Optimistic Grant',
+                  link: '/os/borg/implants/optimistic-grant',
+                },
+                {
+                  text: 'DAO Veto Grant',
+                  link: '/os/borg/implants/dao-veto-grant',
+                },
+                {
+                  text: 'DAO Vote Grant',
+                  link: '/os/borg/implants/dao-vote-grant',
+                },
+              ],
+            },
+            {
+              text: 'Conditions',
+              link: '/os/borg/conditions',
+            },
+            {
+              text: '📋 BORG Types',
+              collapsed: false,
+              items: [
+                {
+                  text: 'Overview',
+                  link: '/os/borg/borg-types',
+                },
+                {
+                  text: 'grantsBORG',
                   link: '/os/borg/borg-types/grantsborg',
                 },
                 {
-                  text: 'Eject a BORG member',
+                  text: 'devBORG',
+                  link: '/os/borg/borg-types/devborg',
                 },
                 {
-                  text: 'Update a BORG\'s policy',
+                  text: 'securityBORG',
+                  link: '/os/borg/borg-types/securityborg',
                 },
                 {
-                  text: 'Recover DAO funds',
+                  text: 'finBORG',
+                  link: '/os/borg/borg-types/finborg',
                 },
-              ]
+                {
+                  text: 'genBORG',
+                  link: '/os/borg/borg-types/genborg',
+                },
+                {
+                  text: 'bizBORG (cyberCORP)',
+                  link: '/os/borg/borg-types/bizborg',
+                },
+              ],
             },
-          ]
+            {
+              text: '💻 BORG Command Center',
+              collapsed: false,
+              items: [
+                {
+                  text: '📝 "How-to" BORG',
+                  link: '/os/borg/how-to',
+                },
+                {
+                  text: '💼 BORG Members',
+                  collapsed: false,
+                  items: [
+                    {
+                      text: 'Propose a transaction',
+                    },
+                    {
+                      text: 'Manage members',
+                    },
+                    {
+                      text: 'Manage Documents',
+                    },
+                  ],
+                },
+                {
+                  text: '🗳️ DAO Token Holders',
+                  items: [
+                    {
+                      text: 'Initiate a DAO Vote',
+                      link: '/os/borg/borg-types/grantsborg',
+                    },
+                    {
+                      text: 'Eject a BORG member',
+                    },
+                    {
+                      text: 'Update a BORG\'s policy',
+                    },
+                    {
+                      text: 'Recover DAO funds',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          text: 'MetaVesT',
+          link: '/metavest',
+        },
+        {
+          text: 'LeXscroW',
+          link: '/lexscrow',
         },
       ],
     },
@@ -165,12 +177,6 @@ export default defineConfig({
           link: '/cybernetic-law/intro-to-cybernetic-law',
         },
       ],
-    },
-    {
-      text: 'MetaVesT (Coming Soon)',
-    },
-    {
-      text: 'LexScrow (Coming Soon)',
     }
   ],
   vite: {
