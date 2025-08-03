@@ -5,10 +5,6 @@ export default defineConfig({
   title: 'MetaLeX OS Docs',
   sidebar: [
     {
-      text: '🖖 MetaLeX OS',
-      link: '/',
-      collapsed: false,
-      items: [
         {
           text: '👋 Introduction',
           link: '/os/metalex-os-intro',
@@ -22,7 +18,7 @@ export default defineConfig({
           collapsed: true,
           items: [
             {
-              text: '😎 What is a BORG?',
+              text: '🖖 What is a BORG?',
               link: '/os/dao/intro-to-borgs',
             },
             {
@@ -181,7 +177,6 @@ export default defineConfig({
             },
           ],
         },
-      ],
     },
   ],
   vite: {
