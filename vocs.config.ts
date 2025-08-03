@@ -161,7 +161,37 @@ export default defineConfig({
         },
         {
           text: '🏢 cyberCORPs',
-          link: '/cybercorps',
+          collapsed: true,
+          items: [
+            {
+              text: 'Overview',
+              link: '/cybercorps/overview',
+            },
+            {
+              text: 'On‑Chain Capital Structure',
+              link: '/cybercorps/on-chain-capital-structure',
+            },
+            {
+              text: 'Deal Flow and Agreements',
+              link: '/cybercorps/deal-flow-and-agreements',
+            },
+            {
+              text: 'Governance and Officers',
+              link: '/cybercorps/governance-and-officers',
+            },
+            {
+              text: 'Launching a cyberCORP',
+              link: '/cybercorps/launching-a-cybercorp',
+            },
+            {
+              text: 'Future Integrations',
+              link: '/cybercorps/future-integrations',
+            },
+            {
+              text: 'Sources',
+              link: '/cybercorps/sources',
+            },
+          ],
         },
         {
           text: '⏳ MetaVesT',
