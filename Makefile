@@ -11,3 +11,6 @@ dev:
 
 preview:
 	$(NPM) run preview
+
+test:
+	$(NPM) test
