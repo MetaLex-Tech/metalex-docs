@@ -23,8 +23,62 @@ export default defineConfig({
           link: '/os/key-terms',
         },
         {
+          text: 'borgCORE',
+          link: '/os/borg/borg-core',
+        },
+        {
+          text: 'BORG Modes',
+          link: '/os/borg/borg-modes',
+          collapsed: false,
+          items: [
+            {
+              text: 'Unrestricted',
+              link: '/os/borg/borg-modes/unrestricted',
+            },
+            {
+              text: 'Blacklist',
+              link: '/os/borg/borg-modes/blacklist',
+            },
+            {
+              text: 'Whitelist',
+              link: '/os/borg/borg-modes/whitelist',
+            },
+          ],
+        },
+        {
+          text: 'Implants',
+          link: '/os/borg/implants',
+          collapsed: true,
+          items: [
+            {
+              text: 'FailSafe',
+              link: '/os/borg/implants/fail-safe',
+            },
+            {
+              text: 'Eject',
+              link: '/os/borg/implants/eject',
+            },
+            {
+              text: 'Optimistic Grant',
+              link: '/os/borg/implants/optimistic-grant',
+            },
+            {
+              text: 'DAO Veto Grant',
+              link: '/os/borg/implants/dao-veto-grant',
+            },
+            {
+              text: 'DAO Vote Grant',
+              link: '/os/borg/implants/dao-vote-grant',
+            },
+          ],
+        },
+        {
+          text: 'Conditions',
+          link: '/os/borg/conditions',
+        },
+        {
           text: '📋 BORG Types',
-          collapsed: false, 
+          collapsed: false,
           items: [
             {
               text: 'Overview',
@@ -99,70 +153,6 @@ export default defineConfig({
               ]
             },
           ]
-        },
-      ],
-    },
-    {
-      text: '⛓️ Onchain BORGs',
-      collapsed: false,
-      items: [
-        {
-          text: 'Intro to Onchain BORGs',
-          link: '/borgs/intro-to-borgs',
-        },
-        {
-          text: 'borgCORE',
-          link: '/borgs/borg-core',
-        },
-        {
-          text: 'BORG Modes',
-          link: '/borgs/borg-modes',
-          collapsed: false,
-          items: [
-            {
-              text: 'Unrestricted',
-              link: '/borgs/borg-modes/unrestricted',
-            },
-          {
-            text: 'Blacklist',
-            link: '/borgs/borg-modes/blacklist',
-          },
-          {
-            text: 'Whitelist',
-            link: '/borgs/borg-modes/whitelist',
-          },
-          ]
-        },
-        {
-          text: 'Implants',
-          link: '/borgs/implants',
-          collapsed: true,
-          items: [
-            {
-              text: 'FailSafe',
-              link: '/borgs/implants/fail-safe',
-            },
-            {
-              text: 'Eject',
-              link: '/borgs/implants/eject',
-            },
-            {
-              text: 'Optimistic Grant',
-              link: '/borgs/implants/optimistic-grant',
-            },
-            {
-              text: 'DAO Veto Grant',
-              link: '/borgs/implants/dao-veto-grant',
-            },
-            {
-              text: 'DAO Vote Grant',
-              link: '/borgs/implants/dao-vote-grant',
-            },
-          ]
-        },
-        {
-          text: 'Conditions',
-          link: '/borgs/conditions',
         },
       ],
     },
