@@ -5,9 +5,7 @@ content:
 ---
 
 # Blacklist Mode
-
-The BORG core permits all actions except those explicitly denied.
-
-- Transfers to addresses on the blacklist are rejected.
-- Calls to disallowed contracts or methods fail unless parameters pass defined checks.
-- Useful for trusted operators who need flexibility while blocking known risks.
+- Transactions are permitted by default except those explicitly denied.
+- Addresses on the blacklist cannot receive transfers.
+- Contract calls or specific methods may be blocked unless parameters satisfy defined constraints.
+- Useful for trusted teams needing broad discretion while avoiding a short list of risky actions.
