@@ -104,8 +104,8 @@ export default defineConfig({
     },
     {
       text: '⛓️ Onchain BORGs',
-      collapsed: false, 
-      items: [ 
+      collapsed: false,
+      items: [
         {
           text: 'Intro to Onchain BORGs',
           link: '/borgs/intro-to-borgs',
@@ -163,8 +163,18 @@ export default defineConfig({
         {
           text: 'Conditions',
           link: '/borgs/conditions',
-        }, 
-      ], 
+        },
+      ],
+    },
+    {
+      text: '⚖️ Cybernetic Law',
+      collapsed: false,
+      items: [
+        {
+          text: 'Intro to Cybernetic Law',
+          link: '/cybernetic-law/intro-to-cybernetic-law',
+        },
+      ],
     },
     {
       text: 'MetaVesT (Coming Soon)',
