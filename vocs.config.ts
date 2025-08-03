@@ -18,7 +18,11 @@ export default defineConfig({
           collapsed: true,
           items: [
             {
-              text: '😎 What is a BORG?',
+              text: 'BORGs OS',
+                link: '/borg/BORGs-OS',
+            },
+            {
+              text: 'What is a BORG?',
                 link: '/borg/intro-to-borgs',
             },
             {
