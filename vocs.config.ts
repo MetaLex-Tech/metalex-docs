@@ -172,8 +172,8 @@ export default defineConfig({
               link: '/cybercorps/what-is-a-cyberCORP',
             },
             {
-              text: 'On‑Chain Capital Structure',
-              link: '/cybercorps/on-chain-capital-structure',
+              text: 'Onchain Capital Structure',
+              link: '/cybercorps/onchain-capital-structure',
             },
             {
               text: 'Deal Flow and Agreements',
