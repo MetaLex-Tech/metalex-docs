@@ -12,17 +12,29 @@ The [Cybernetic Organization (CybOrg or ‘BORG’)](/borg/intro-to-borgs) is a 
 
 Similar to DAOs, BORGs operate mostly in public and seek to utilize cutting-edge technology and economic incentive mechanisms to minimize traditional trust-based reliance on intermediaries, fiduciaries and other agents. Unlike a DAO, however, BORGs are not intended to be fully transparent, fully decentralized or fully autonomous or to rely on technological and economic incentive mechanisms alone; instead, they are incorporated as state-chartered entities and rely on a mix of legal, technological and economic mechanisms. BORGs appear in two broad flavors: tech‑augmented companies (“Business BORGs”) and trust‑mitigated entities that wrap or interface with a DAO (“DAO‑Adjacent BORGs”).
 
-## Business BORG ###
+## BORG-CORE ###
 
-A BORG structured as a tech‑augmented company—e.g., a corporation whose shares are tokenized and programmable.
-
-## DAO-Adjacent BORG ###
-
-A BORG designed to work alongside a DAO, such as a foundation wrapping a DAO-controlled multisig and granting the DAO specific rights over the entity’s actions.
+Every BORG on [BORGs OS](/borg/BORGs-OS) has a [BORGcore](/borg/borg-core) smart contract as its heart. A BORGcore is a SAFE Guard combined with a standard ERC 4824 DAO interface.
 
 ## BORGs OS ###
 
 The open-source operating system formerly called MetaLeX OS, serving as a shared framework for building and running BORGs and distinct from the more closed-source cyberCORP initiative. Learn more in the [BORGs OS guide](/borg/BORGs-OS).
+
+## Business BORG ###
+
+A BORG structured as a tech‑augmented company—e.g., a corporation whose shares are tokenized and programmable.
+
+## cyberCORP ###
+
+An [onchain business entity](/cybercorps) with tokenized securities; currently in a more closed-source, real-world-asset-focused beta track.
+
+## Cybernetic Legal Agreement (Cybernetic Law Template) ###
+
+A drafting approach that pairs legal text with code for interoperable, composable agreements, avoiding walled-garden SaaS tools. See the [Cybernetic Law introduction](/cybernetic-law/intro-to-cybernetic-law) for background.
+
+## cyberSAFE ###
+
+A tech-enhanced SAFE that executes signing and funding atomically, issues NFT-based security certificates, and automates deal logic onchain.
 
 ## DAO ###
 
@@ -37,6 +49,10 @@ Put more simply, we view DAOs as limited-programmability robots whose rules and 
 
 The riskiest liability vectors that could be associated with DAOs (clearly commercial and/or regulated offchain activities such as investing in new projects, hiring workers for salaried offchain jobs, etc.) should be treated as adjacent to the DAO rather than part of it, and should be housed in transparent, accountable, cybernetically enhanced DAO-adjacent entities: BORGs.
 
+## DAO-Adjacent BORG ###
+
+A BORG designed to work alongside a DAO, such as a foundation wrapping a DAO-controlled multisig and granting the DAO specific rights over the entity’s actions.
+
 ## Directors ### 
 
 Directors are individuals or entities with supervisory and/or operational authority over a legal entity. The exact scope and mechanisms through which directors manage an entity vary depending on the entity type, jurisdiction, and the entity's specific rules (especially Bylaws). In the context of BORGs, directors are likely to be owners of private-key-signers on one or more SAFEs/multisigs included in the BORG. BORGs OS recognizes a specific 'director role' within multisigs, which is basically a subset of signers a majority of whom *must* approve a given transaction for it to execute.
@@ -45,13 +61,30 @@ Directors are individuals or entities with supervisory and/or operational author
 
 Guardian is a role with no well-defined corporate precedent, but was created as a hybrid entity/SAFE role specifically for BORGs. Guardians are members of a SAFE/multisig within a BORG that are on the SAFE primarily to provide additional security (through wider distribution of private keys/signing power) or quality control and compliance checks, but do not have authorities/powers as broad as those of directors. Part of the reason for having the guardian role is that the KYC/AML and compliance obligations of a legal entity's directors may be very high, meaning that it is hard to obtain a large number of directors to serve on a BORG, but, meanwhile, for reasons of increasing the security of tokens held by a SAFE, it is desirable to have a greater number of private key holders to lower the risk of 'wrench attacks' and other physical attacks as well as loss of keys or unavailability/downtime of signers in an emergency. A BORG's SAFE/multisig may therefore be required to require the approval of both a majority of the directors and some minimum number of guardians before a transaction will execute from the SAFE/multisig.
 
+## Implants ###
+
+Implants aka 'cybernetic implants' are SAFE Modules included in BORGs OS and designed to make SAFEs function as parts of BORGs.
+
 ## Legal Entity ### 
 
 A legal entity is an organization that is given independent personhood through the statutes of a nation or state. Legal entities are generally formed through 'incorporation' or a similar process--filing the entity's charter documents with the relevant nation or state and following specific rules and formalities in doing so. Legal entities generally confer 'limited liability' on their owners and operators--i.e., if the legal entity violates a law or breaches a contract, it is the entity that is liable (out of the assets owned by the entity) and not the individuals who own or operate the entity. Legal entities also allow for continuity of operations over time (for example, enabling long-term legal agreements, banking relationships, etc.) even as individual humans who operate the legal entity change over time. 
 
+## LeXscroW ###
+
+[LeXscroW](/lexscrow) is a suite of ownerless, condition-driven escrow contracts. Escrows enforce immutable release rules and automatically refund deposits when conditions are not met. Variants support bilateral token swaps, one-sided token sales or native-token escrows.
+
+## MetaVesT ###
+
+[MetaVesT](/metavest) is an advanced vesting and token lockup protocol. It enables dual vesting and unlocking curves, option-style grants, group amendments and milestone-based releases while ensuring vested tokens cannot be rugged without consent.
+
 ## Multisig aka SAFE ###
 
 See [SAFE aka Multisig below](#safe-aka-multisig).
+
+## Ricardian Tripler ###
+
+A hybrid code/law primitive combining smart-contract code, legal text and parameters to deploy and enforce agreements entirely onchain. Explore its role in [Cybernetic Law](/cybernetic-law/intro-to-cybernetic-law#ricardian-triplers).
+
 
 ## SAFE aka Multisig ###
 
@@ -68,36 +101,3 @@ A Guard is added to a SAFE by calling the setGuard() function of the SAFE with t
 SAFE Modules (sometimes just referred to as 'modules') are smart contracts that extend or modify the functioning of an otherwise standard Gnosis SAFE. They can execute transactions on the SAFE that have not been individually approved by the requisite majority or plurality of signatures. 
 
 A Module is added to a SAFE by calling the enableModule() function of the SAFE with the requisite majority or plurality of signatures, parameterized to the smart contract address of the Module. A SAFE can manage multiple Modules through a ModuleManager contract. Typical use-cases would be giving another account a per-month ‘allowance’ it can spend out of the SAFE’s assets, timelocking an upgrade authority that may be exercised by the SAFE over a DeFi protocol, or facilitating Moloch-style ‘ragequit’ functionality where a signer can quit the multisig with a proportional share of its assets. 
-
-## Implants ###
-
-Implants aka 'cybernetic implants' are SAFE Modules included in BORGs OS and designed to make SAFEs function as parts of BORGs.
-
-## BORG-CORE ###
-
-Every BORG on [BORGs OS](/borg/BORGs-OS) has a [BORGcore](/borg/borg-core) smart contract as its heart. A BORGcore is a SAFE Guard combined with a standard ERC 4824 DAO interface.
-
-## LeXscroW ###
-
-[LeXscroW](/lexscrow) is a suite of ownerless, condition-driven escrow contracts. Escrows enforce immutable release rules and automatically refund deposits when conditions are not met. Variants support bilateral token swaps, one-sided token sales or native-token escrows.
-
-## MetaVesT ###
-
-[MetaVesT](/metavest) is an advanced vesting and token lockup protocol. It enables dual vesting and unlocking curves, option-style grants, group amendments and milestone-based releases while ensuring vested tokens cannot be rugged without consent.
-
-## cyberCORP ###
-
-An [onchain business entity](/cybercorps) with tokenized securities; currently in a more closed-source, real-world-asset-focused beta track.
-
-## cyberSAFE ###
-
-A tech-enhanced SAFE that executes signing and funding atomically, issues NFT-based security certificates, and automates deal logic onchain.
-
-## Cybernetic Legal Agreement (Cybernetic Law Template) ###
-
-A drafting approach that pairs legal text with code for interoperable, composable agreements, avoiding walled-garden SaaS tools. See the [Cybernetic Law introduction](/cybernetic-law/intro-to-cybernetic-law) for background.
-
-## Ricardian Tripler ###
-
-A hybrid code/law primitive combining smart-contract code, legal text and parameters to deploy and enforce agreements entirely onchain. Explore its role in [Cybernetic Law](/cybernetic-law/intro-to-cybernetic-law#ricardian-triplers).
-
