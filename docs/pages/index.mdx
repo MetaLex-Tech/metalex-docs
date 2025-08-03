@@ -1,42 +1,41 @@
 ---
-content: 
+content:
   width: 75%
 ---
 import { CardGrid, Card, Callout } from "@components";
-import { LuShield } from "react-icons/lu";
-import { HiComputerDesktop } from "react-icons/hi2";
-import { LiaFileContractSolid } from "react-icons/lia";
+import { LuShield, LuBuilding2, LuTimer, LuHandshake, LuScale } from "react-icons/lu";
 
 # ![Logo](/header.png)
-# 🖖 Welcome to MetaLeX OS
+# Welcome to MetaLeX
 
-MetaLeX OS is the 'operating system' for cyBernetic ORGanizations, also as known as 'BORGs'--legal entities that are tightly coupled with blockchain technology to achieve governance-accountable, trust-minimized, transaction-automated and legally optimized governance structures.
+MetaLeX builds legal and technical infrastructure for cyBernetic ORGanizations ("BORGs") and other onchain entities. Our tools combine blockchain automation with robust legal frameworks to help communities coordinate, govern, and transact with confidence.
 
-MetaLeX OS consists of a system of BORG-optimized smart contracts, legal documents, offchain legal entity structures, and a web application for monitoring, operating and transacting with BORGs.
-
-**Jump right in**
+Explore the areas below to learn more about what we're building.
 
 <CardGrid>
-  <Card
-    title="Intro To Borgs"
-    link="/os/dao/intro-to-borgs"
-    icon={<LuShield />}
-  >
+  <Card title="MetaLeX OS" link="/os/metalex-os-intro" icon={<LuShield />}>
     <span>
-        Primer on BORGs
+      Operating system for BORGs.
     </span>
   </Card>
-  <Card
-   title="Command Center"
-   link="/os/borg/borg-landing"
-   icon={<HiComputerDesktop />}>  
+  <Card title="cyberCORPs" link="/cybercorps" icon={<LuBuilding2 />}>
     <span>
-      MetaLeX OS operating guide.
+      Tokenized corporate structures.
     </span>
   </Card>
-  <Card title="On Chain Contracts" link="/os/borg/implants" icon={<LiaFileContractSolid />}>
+  <Card title="MetaVesT" link="/metavest" icon={<LuTimer />}>
     <span>
-      Details on the smart contracts that power BORGs.
+      On‑chain vesting and token lockups.
+    </span>
+  </Card>
+  <Card title="LeXscroW" link="/lexscrow" icon={<LuHandshake />}>
+    <span>
+      Ownerless, condition‑based escrow.
+    </span>
+  </Card>
+  <Card title="Cybernetic Law" link="/cybernetic-law/intro-to-cybernetic-law" icon={<LuScale />}>
+    <span>
+      Legal framework for onchain entities.
     </span>
   </Card>
 </CardGrid>
