@@ -8,6 +8,19 @@ content:
 
 LeXscroW is an ownerless, condition‑based escrow system used by BORGs to enforce on‑chain deal logic. Escrows are deployed without an admin, and their release conditions are immutable once set. Contracts are non‑custodial—the funds remain in escrow until predefined rules resolve them.
 
+## LexScroWLite in cyberCORPs
+
+cyberCORPs embed a streamlined implementation called **LexScroWLite** to mediate deals between a corp and a counterparty. The library manages escrow state, enforces conditions from the Cyber Agreement Registry and releases assets only when a deal is paid and finalized.
+
+LexScroWLite supports escrow of ERC20, ERC721 and ERC1155 tokens. It can:
+
+- create a new escrow tied to a specific agreement;
+- pull funds from a buyer once a counterparty is set;
+- finalize the deal by routing corp assets to the buyer and buyer assets to the corp; and
+- void and refund if the agreement is cancelled.
+
+This lite contract is used internally by cyberCORPs for trustless execution while keeping funds non‑custodial.
+
 ## Core Features
 
 - **Ownerless deployment** – contracts have no privileged account after creation.
@@ -36,4 +49,4 @@ LeXscroW is an ownerless, condition‑based escrow system used by BORGs to enfor
 - M&A escrows that swap governance tokens after both communities approve.
 - Social bets, such as KOL wagers resolved by an oracle feed.
 
-[Source code and audits](https://github.com/MetaLex-Tech/LeXscroW) are available for teams that need deeper integration details.
+[Source code and audits](https://github.com/MetaLex-Tech/LeXscroW) and the [LexScroWLite library used by cyberCORPs](https://github.com/MetaLex-Tech/cybercorps-contracts/blob/develop/src/libs/LexScroWLite.sol) are available for teams that need deeper integration details.
