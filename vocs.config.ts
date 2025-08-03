@@ -163,6 +163,10 @@ export default defineConfig({
           link: '/metavest',
         },
         {
+          text: 'LeXscroW',
+          link: '/lexscrow',
+        },
+        {
           text: '⚖️ Cybernetic Law',
           collapsed: false,
           items: [
@@ -171,10 +175,6 @@ export default defineConfig({
               link: '/cybernetic-law/intro-to-cybernetic-law',
             },
           ],
-        },
-        {
-          text: 'LeXscroW',
-          link: '/lexscrow',
         },
       ],
     },
