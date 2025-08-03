@@ -163,21 +163,21 @@ export default defineConfig({
           link: '/metavest',
         },
         {
+          text: '⚖️ Cybernetic Law',
+          collapsed: false,
+          items: [
+            {
+              text: 'Intro to Cybernetic Law',
+              link: '/cybernetic-law/intro-to-cybernetic-law',
+            },
+          ],
+        },
+        {
           text: 'LeXscroW',
           link: '/lexscrow',
         },
       ],
     },
-    {
-      text: '⚖️ Cybernetic Law',
-      collapsed: false,
-      items: [
-        {
-          text: 'Intro to Cybernetic Law',
-          link: '/cybernetic-law/intro-to-cybernetic-law',
-        },
-      ],
-    }
   ],
   vite: {
     resolve: {
