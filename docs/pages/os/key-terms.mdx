@@ -10,24 +10,36 @@ content:
 
 The Cybernetic Organization (CybOrg or ‘BORG’), is a traditional legal entity that uses autonomous technologies (such as smart contracts and AI) to augment the entity’s governance and activities. Just as sci-fi cyborgs (‘cybernetic organisms’) augment humans (natural persons) with robotic organs and limbs or microchip or optics implants, BORGs augment state-chartered entities (legal persons) with autonomous software such as smart contracts and AI. Crucially, legal entities that are BORGs do not merely use autonomous technologies as an incidental part of their business–instead, much like a human might have a robotic prosthesis surgically attached to his shoulder, BORGs are legally governed by autonomous technologies through tech-specific rules implanted in their charter documents.
 
-Similar to DAOs, BORGs operate mostly in public and seek to utilize cutting-edge technology and economic incentive mechanisms to minimize traditional trust-based reliance on intermediaries, fiduciaries and other agents. Unlike a DAO, however, BORGs are not intended to be fully transparent, fully decentralized or fully autonomous or to rely on technological and economic incentive mechanisms alone; instead, they are incorporated as state-chartered entities and rely on a mix of legal, technological and economic mechanisms.
+Similar to DAOs, BORGs operate mostly in public and seek to utilize cutting-edge technology and economic incentive mechanisms to minimize traditional trust-based reliance on intermediaries, fiduciaries and other agents. Unlike a DAO, however, BORGs are not intended to be fully transparent, fully decentralized or fully autonomous or to rely on technological and economic incentive mechanisms alone; instead, they are incorporated as state-chartered entities and rely on a mix of legal, technological and economic mechanisms. BORGs appear in two broad flavors: tech‑augmented companies (“Business BORGs”) and trust‑mitigated entities that wrap or interface with a DAO (“DAO‑Adjacent BORGs”).
 
-## DAO ### 
+## Business BORG ###
+
+A BORG structured as a tech‑augmented company—e.g., a corporation whose shares are tokenized and programmable.
+
+## DAO-Adjacent BORG ###
+
+A BORG designed to work alongside a DAO, such as a foundation wrapping a DAO-controlled multisig and granting the DAO specific rights over the entity’s actions.
+
+## BORGs OS ###
+
+The open-source operating system formerly called MetaLeX OS, serving as a shared framework for building and running BORGs and distinct from the more closed-source cyberCORP initiative.
+
+## DAO ###
 
 There is no clear consensus about what a “DAO” is and how it should be defined, and a wide variety of organizations, communities, groups and entities are referred to as “DAOs”. 
 
-MetaLeX OS can plug-and-play with any of these conceptions, but the MetaLeX team prefers sticking to the literal meaning of the acronym “D.A.O.” — i.e., that DAOs must be decentralized and autonomous organizations, where:
+BORGs OS can plug-and-play with any of these conceptions, but the MetaLeX team prefers sticking to the literal meaning of the acronym “D.A.O.” — i.e., that DAOs must be fully onchain, decentralized and autonomous organizations, where:
  * “Autonomous” means self-governing, trust-minimized and resistant to extrinsic exercises of power. 
  * “Decentralized” means that any residual human discretion (i.e., intrinsic modalities of power) are systematically dispersed over a large, agile, and potentially anonymous group of incentive-aligned persons.
  * "Organization" refers to whatever structures or people are organized through the relevant autonomous decentralized technologies.
 
-Put more simply, we view DAOs as limited-programmability robots where the limited programmability power is widely dispersed among users who can only adjust the program in accordance with hard-coded meta-programming rules.
+Put more simply, we view DAOs as limited-programmability robots whose rules and execution live entirely in code, with the limited programmability power widely dispersed among users who can only adjust the program in accordance with hard-coded meta-programming rules.
 
 The riskiest liability vectors that could be associated with DAOs (clearly commercial and/or regulated offchain activities such as investing in new projects, hiring workers for salaried offchain jobs, etc.) should be treated as adjacent to the DAO rather than part of it, and should be housed in transparent, accountable, cybernetically enhanced DAO-adjacent entities: BORGs.
 
 ## Directors ### 
 
-Directors are individuals or entities with supervisory and/or operational authority over a legal entity. The exact scope and mechanisms through which directors manage an entity vary depending on the entity type, jurisdiction, and the entity's specific rules (especially Bylaws). In the context of BORGs, directors are likely to be owners of private-key-signers on one or more SAFEs/multisigs included in the BORG. MetaLeX OS recognizes a specific 'director role' within multisigs, which is basically a subset of signers a majority of whom *must* approve a given transaction for it to execute.
+Directors are individuals or entities with supervisory and/or operational authority over a legal entity. The exact scope and mechanisms through which directors manage an entity vary depending on the entity type, jurisdiction, and the entity's specific rules (especially Bylaws). In the context of BORGs, directors are likely to be owners of private-key-signers on one or more SAFEs/multisigs included in the BORG. BORGs OS recognizes a specific 'director role' within multisigs, which is basically a subset of signers a majority of whom *must* approve a given transaction for it to execute.
 
 ## Guardians ### 
 
@@ -59,11 +71,11 @@ A Module is added to a SAFE by calling the enableModule() function of the SAFE w
 
 ## Implants ###
 
-Implants aka 'cybernetic implants' are SAFE Modules included in MetaLeX OS and designed to make SAFEs function as parts of BORGs. 
+Implants aka 'cybernetic implants' are SAFE Modules included in BORGs OS and designed to make SAFEs function as parts of BORGs.
 
 ## BORG-CORE ###
 
-Every BORG on MetaLeX OS has a BORGcore smart contract as its heart. A BORGcore is a SAFE Guard combined with a standard ERC 4824 DAO interface.
+Every BORG on BORGs OS has a BORGcore smart contract as its heart. A BORGcore is a SAFE Guard combined with a standard ERC 4824 DAO interface.
 
 ## LeXscroW ###
 
@@ -72,4 +84,20 @@ LeXscroW is a suite of ownerless, condition-driven escrow contracts. Escrows enf
 ## MetaVesT ###
 
 MetaVesT is an advanced vesting and token lockup protocol. It enables dual vesting and unlocking curves, option-style grants, group amendments and milestone-based releases while ensuring vested tokens cannot be rugged without consent.
+
+## cyberCORP ###
+
+An onchain business entity with tokenized securities; currently in a more closed-source, real-world-asset-focused beta track.
+
+## cyberSAFE ###
+
+A tech-enhanced SAFE that executes signing and funding atomically, issues NFT-based security certificates, and automates deal logic onchain.
+
+## Cybernetic Legal Agreement (Cybernetic Law Template) ###
+
+A drafting approach that pairs legal text with code for interoperable, composable agreements, avoiding walled-garden SaaS tools.
+
+## Ricardian Tripler ###
+
+A hybrid code/law primitive combining smart-contract code, legal text and parameters to deploy and enforce agreements entirely onchain.
 
