@@ -7,11 +7,11 @@ export default defineConfig({
 
         {
           text: '👋 Introduction',
-          link: '/os/metalex-os-intro',
+          link: '/metalex-os-intro',
         },
         {
           text: '🔑 Key Terms',
-          link: '/os/key-terms',
+          link: '/key-terms',
         },
         {
           text: '🤖 BORGs',
@@ -19,61 +19,61 @@ export default defineConfig({
           items: [
             {
               text: '😎 What is a BORG?',
-              link: '/os/dao/intro-to-borgs',
+                link: '/dao/intro-to-borgs',
             },
             {
               text: 'borgCORE',
-              link: '/os/borg/borg-core',
+                link: '/borg/borg-core',
             },
             {
               text: 'BORG Modes',
-              link: '/os/borg/borg-modes',
+                link: '/borg/borg-modes',
               collapsed: true,
               items: [
                 {
                   text: 'Unrestricted',
-                  link: '/os/borg/borg-modes/unrestricted',
+                    link: '/borg/borg-modes/unrestricted',
                 },
                 {
                   text: 'Blacklist',
-                  link: '/os/borg/borg-modes/blacklist',
+                    link: '/borg/borg-modes/blacklist',
                 },
                 {
                   text: 'Whitelist',
-                  link: '/os/borg/borg-modes/whitelist',
+                    link: '/borg/borg-modes/whitelist',
                 },
               ],
             },
             {
               text: 'Implants',
-              link: '/os/borg/implants',
+                link: '/borg/implants',
               collapsed: true,
               items: [
                 {
                   text: 'FailSafe',
-                  link: '/os/borg/implants/fail-safe',
+                  link: '/borg/implants/fail-safe',
                 },
                 {
                   text: 'Eject',
-                  link: '/os/borg/implants/eject',
+                  link: '/borg/implants/eject',
                 },
                 {
                   text: 'Optimistic Grant',
-                  link: '/os/borg/implants/optimistic-grant',
+                  link: '/borg/implants/optimistic-grant',
                 },
                 {
                   text: 'DAO Veto Grant',
-                  link: '/os/borg/implants/dao-veto-grant',
+                  link: '/borg/implants/dao-veto-grant',
                 },
                 {
                   text: 'DAO Vote Grant',
-                  link: '/os/borg/implants/dao-vote-grant',
+                  link: '/borg/implants/dao-vote-grant',
                 },
               ],
             },
             {
               text: 'Conditions',
-              link: '/os/borg/conditions',
+              link: '/borg/conditions',
             },
             {
               text: '📋 BORG Types',
@@ -81,31 +81,31 @@ export default defineConfig({
               items: [
                 {
                   text: 'Overview',
-                  link: '/os/borg/borg-types',
+                  link: '/borg/borg-types',
                 },
                 {
                   text: 'grantsBORG',
-                  link: '/os/borg/borg-types/grantsborg',
+                  link: '/borg/borg-types/grantsborg',
                 },
                 {
                   text: 'devBORG',
-                  link: '/os/borg/borg-types/devborg',
+                  link: '/borg/borg-types/devborg',
                 },
                 {
                   text: 'securityBORG',
-                  link: '/os/borg/borg-types/securityborg',
+                  link: '/borg/borg-types/securityborg',
                 },
                 {
                   text: 'finBORG',
-                  link: '/os/borg/borg-types/finborg',
+                  link: '/borg/borg-types/finborg',
                 },
                 {
                   text: 'genBORG',
-                  link: '/os/borg/borg-types/genborg',
+                  link: '/borg/borg-types/genborg',
                 },
                 {
                   text: 'bizBORG (cyberCORP)',
-                  link: '/os/borg/borg-types/bizborg',
+                  link: '/borg/borg-types/bizborg',
                 },
               ],
             },
@@ -115,7 +115,7 @@ export default defineConfig({
               items: [
                 {
                   text: '📝 "How-to" BORG',
-                  link: '/os/borg/how-to',
+                  link: '/borg/how-to',
                 },
                 {
                   text: '💼 BORG Members',
@@ -138,7 +138,7 @@ export default defineConfig({
                   items: [
                     {
                       text: 'Initiate a DAO Vote',
-                      link: '/os/borg/borg-types/grantsborg',
+                        link: '/borg/borg-types/grantsborg',
                     },
                     {
                       text: 'Eject a BORG member',
