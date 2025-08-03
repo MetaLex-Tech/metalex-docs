@@ -23,7 +23,7 @@ export default defineConfig({
             },
             {
               text: 'What is a BORG?',
-                link: '/borg/intro-to-borgs',
+                link: '/borg/what-is-a-BORG',
             },
             {
               text: 'Legal Approach',
@@ -168,8 +168,8 @@ export default defineConfig({
           collapsed: true,
           items: [
             {
-              text: 'Overview',
-              link: '/cybercorps/overview',
+              text: 'What is a cyberCORP?',
+              link: '/cybercorps/what-is-a-cyberCORP',
             },
             {
               text: 'On‑Chain Capital Structure',
