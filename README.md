@@ -18,3 +18,7 @@ The make targets call `scripts/npm.sh`, which clears proxy-related
 environment variables before invoking `npm`. This eliminates warnings such as
 `Unknown env config "http-proxy"`. You can also run the wrapper directly, for
 example `./scripts/npm.sh test`.
+
+To keep dependencies current, periodically run `./scripts/npm.sh update` (or
+`npm update`) and commit the resulting changes rather than using `latest`
+versions in `package.json`.
