@@ -188,6 +188,10 @@ export default defineConfig({
               link: '/cybercorps/launching-a-cybercorp',
             },
             {
+              text: 'LeXcheX',
+              link: '/cybercorps/lexchex',
+            },
+            {
               text: 'Future Integrations',
               link: '/cybercorps/future-integrations',
             },
