@@ -168,6 +168,10 @@ export default defineConfig({
           collapsed: true,
           items: [
             {
+              text: 'cyberCORPs OS',
+              link: '/cybercorps/cybercorps-OS',
+            },
+            {
               text: 'What is a cyberCORP?',
               link: '/cybercorps/what-is-a-cyberCORP',
             },
@@ -176,20 +180,12 @@ export default defineConfig({
               link: '/cybercorps/onchain-capital-structure',
             },
             {
-              text: 'Deal Flow and Agreements',
-              link: '/cybercorps/deal-flow-and-agreements',
-            },
-            {
               text: 'Governance and Officers',
               link: '/cybercorps/governance-and-officers',
             },
             {
               text: 'Launching a cyberCORP',
               link: '/cybercorps/launching-a-cybercorp',
-            },
-            {
-              text: 'LeXcheX',
-              link: '/cybercorps/lexchex',
             },
             {
               text: 'Future Integrations',
@@ -202,12 +198,26 @@ export default defineConfig({
           ],
         },
         {
-          text: '⏳ MetaVesT',
-          link: '/metavest',
-        },
-        {
-          text: '🤝 LeXscroW',
-          link: '/lexscrow',
+          text: '🤝 cyberDeals',
+          collapsed: true,
+          items: [
+            {
+              text: 'Deal Flow and Agreements',
+              link: '/cyberdeals/deal-flow-and-agreements',
+            },
+            {
+              text: 'LeXcheX',
+              link: '/cyberdeals/lexchex',
+            },
+            {
+              text: 'MetaVesT',
+              link: '/cyberdeals/metavest',
+            },
+            {
+              text: 'LeXscroW',
+              link: '/cyberdeals/lexscrow',
+            },
+          ],
         },
         {
           text: '⚖️ Cybernetic Law',
