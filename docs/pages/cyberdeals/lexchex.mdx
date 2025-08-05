@@ -83,6 +83,60 @@ contract YourContract {
 }
 ```
 
+Here are examples using popular JavaScript/TypeScript libraries:
+
+##### Viem
+```typescript
+import { createPublicClient, http } from 'viem'
+import { mainnet } from 'viem/chains'
+
+const LEXCHEX_ADDRESS = '0x123E895e0e1a4e39b2E0488DB904AD37C7A62EeD'
+const LEXCHEX_ABI = [{
+  name: 'hasValidLexCheX',
+  type: 'function',
+  stateMutability: 'view',
+  inputs: [{ name: 'owner', type: 'address' }],
+  outputs: [{ name: '', type: 'bool' }]
+}] as const
+
+const client = createPublicClient({
+  chain: mainnet,
+  transport: http()
+})
+
+// Check if an address has valid accreditation
+const checkAccreditation = async (address: string) => {
+  const isAccredited = await client.readContract({
+    address: LEXCHEX_ADDRESS,
+    abi: LEXCHEX_ABI,
+    functionName: 'hasValidLexCheX',
+    args: [address]
+  })
+  
+  return isAccredited
+}
+```
+
+##### Ethers.js
+```typescript
+import { ethers } from 'ethers'
+
+const LEXCHEX_ADDRESS = '0x123E895e0e1a4e39b2E0488DB904AD37C7A62EeD'
+const LEXCHEX_ABI = [
+  'function hasValidLexCheX(address owner) view returns (bool)'
+]
+
+// Using ethers v6
+const provider = new ethers.JsonRpcProvider('YOUR_RPC_URL')
+const lexchex = new ethers.Contract(LEXCHEX_ADDRESS, LEXCHEX_ABI, provider)
+
+// Check if an address has valid accreditation
+const checkAccreditation = async (address: string) => {
+  const isAccredited = await lexchex.hasValidLexCheX(address)
+  return isAccredited
+}
+```
+
 **Sources:**
 
 * [LeXcheX Smart Contract Code](https://github.com/MetaLex-Tech/cybercorps-contracts/blob/e2afc8b1fbecff89f97b8b23d6134508ed00437a/src/creds/lexchex.sol)
