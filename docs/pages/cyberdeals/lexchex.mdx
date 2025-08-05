@@ -42,15 +42,47 @@ By combining cyberCORPS with LeXcheX, MetaLeX delivers an end-to-end on-chain fu
 #### Third-Party Integrations
 LeXcheX is designed to be highly friendly to third-party integration. 
 
-Deployment addresses on Ethereum and all Etherem L2s (we can support additional L2s upon request):
-```
-  0x123E895e0e1a4e39b2E0488DB904AD37C7A62EeD
+Technical Integration Guide
+------------------------
+
+LeXcheX is deployed across multiple chains to support various blockchain ecosystems. The contract address is the same on all supported networks:
+
+```solidity
+LexCheX: 0x123E895e0e1a4e39b2E0488DB904AD37C7A62EeD;
 ```
 
-To check if an address has a valid LexCheX accreditation
-```
+### Checking Accreditation Status
+
+To verify if an address has a valid LeXcheX accreditation, you can use the following function:
+
+```solidity
 function hasValidLexCheX(address owner) public view returns (bool)
 ```
+
+This function returns:
+- `true` if the address has a valid, non-expired LeXcheX accreditation
+- `false` if the address either has no LeXcheX token or if their accreditation has expired
+
+Example usage in a smart contract:
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.28;
+
+interface ILexCheX {
+    function hasValidLexCheX(address owner) external view returns (bool);
+}
+
+contract YourContract {
+    ILexCheX constant lexchex = ILexCheX(0x123E895e0e1a4e39b2E0488DB904AD37C7A62EeD);
+    
+    function testFunction(address investor) public view {
+        if(!lexchex.hasValidLexCheX(investor)) revert NotAccredited();
+        // ... rest of your function
+    }
+}
+```
+
 **Sources:**
 
 * [LeXcheX Smart Contract Code](https://github.com/MetaLex-Tech/cybercorps-contracts/blob/e2afc8b1fbecff89f97b8b23d6134508ed00437a/src/creds/lexchex.sol)
