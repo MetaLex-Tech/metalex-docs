@@ -217,6 +217,10 @@ export default defineConfig({
               text: 'LeXscroW',
               link: '/cyberdeals/lexscrow',
             },
+            {
+              text: 'cyberRaise',
+              link: '/cyberdeals/cyberraise',
+            },
           ],
         },
         {
