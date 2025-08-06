@@ -6,9 +6,45 @@ content:
 
 # 🚀 cyberRaise
 
-**cyberRaise** is MetaLeX Labs’ compliant early‑stage fundraising app. Built on top of the cyberCORPS OS and the cyberDeals stack, it lets founders propose, negotiate and close venture deals entirely onchain.
+**[cyberRaise](https://cybercorps.metalex.tech)** is MetaLeX Labs’ compliant early‑stage fundraising app. Built on top of the cyberCORPS OS and the cyberDeals stack, it lets founders propose, negotiate, and close venture deals entirely on-chain. It integrates modules like [LeXcheX](https://metalex-docs.vercel.app/cyberdeals/lexchex) for accredited-investor verification and [LeXscroW](https://metalex-docs.vercel.app/cyberdeals/lexscrow) for non-custodial escrow. SAFEs, token warrants, and hybrid agreements are executed through smart contracts, ensuring that capital moves only when all terms are satisfied.
 
-The application lives at [cybercorps.metalex.tech](https://cybercorps.metalex.tech/) and integrates modules like [LeXcheX](/cyberdeals/lexchex) for accredited‑investor verification and [LeXscroW](/cyberdeals/lexscrow) for non‑custodial escrow. SAFEs, token warrants and hybrid agreements are executed through smart contracts, ensuring that capital moves only when all terms are satisfied.
+## Key Contracts and Modules
 
-An early version of this concept was outlined in [MetaLeX’s “cybersafe” fundraising article](https://metalex.substack.com/p/metalexs-cybersafe-fund-your-company), and cyberRaise continues that vision toward a full‑featured, rule‑compliant VC platform.
+Onchain deal flow in cyberCORP is enabled by several key smart contracts and modules:
+
+* **`DealManager`**: Coordinates deals, tracking proposals, signatures, and finalization.
+* **`CyberAgreementRegistry`**: Maintains standardized legal agreement templates (identified by `templateId`) and records executed deals via `agreementId`.
+* **`IssuanceManager`**: Manages issuance of securities (NFT certificates or SAFE tokens).
+* **`LexScroWLite`**: Manages escrow conditions, ensuring secure asset transfers only when conditions are fulfilled.
+* **`LeXcheX`**: Verifies investor accreditation, often enforced as an escrow condition.
+* **`TokenWarrantExtension`**: Enables hybrid deals, attaching rights for future tokens to equity NFTs.
+* **`ICondition`**: Interface for custom deal conditions (e.g., time locks, KYC checks).
+
+## Proposing a Deal
+
+Founders propose deals via the cyberRaise app or directly by calling `DealManager`, selecting a template (`templateId`), specifying terms, and parties. `DealManager` assigns a unique `agreementId`. The founder cryptographically signs the deal (EIP-712 signature), marking it partially signed.
+
+## Escrow Setup
+
+The `DealManager` initiates a LexScroWLite escrow upon proposal, holding reserved equity NFTs (minted via `IssuanceManager`) pending investor participation.
+
+## Investor Countersigning & Funding
+
+Investors countersign via wallet, simultaneously funding the deal (e.g., using `safeTransferFrom` for ERC-20 tokens like USDC). Assets remain locked in escrow until finalization.
+
+## Finalizing the Deal
+
+Upon meeting conditions, escrow releases investor funds to the company's `companyPayable` address and equity NFTs to the investor. Events (e.g., `DealFinalized`) and on-chain logs record deal closure.
+
+## Hybrid Deals and Token Warrants
+
+Hybrid agreements (SAFE + token warrant) are handled via `TokenWarrantExtension`. Equity NFTs issued include token rights, bundled into a single deal managed seamlessly by the standard process.
+
+## Deal Expiry and Additional Conditions
+
+Deals have expiry deadlines, automatically voiding if unmet. Custom `ICondition` contracts enforce additional requirements (e.g., accreditation via LeXcheX, KYC compliance).
+
+## Benefits of On-Chain Deal Flow
+
+On-chain automation provides faster closings, cryptographic security, and transparent compliance without intermediaries. Founders and investors benefit from streamlined, trust-minimized processes where fundraising becomes programmable and secure.
 
