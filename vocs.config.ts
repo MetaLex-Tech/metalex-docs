@@ -202,8 +202,8 @@ export default defineConfig({
           collapsed: true,
           items: [
             {
-              text: 'Deal Flow and Agreements',
-              link: '/cyberdeals/deal-flow-and-agreements',
+              text: 'cyberRaise',
+              link: '/cyberdeals/cyberraise',
             },
             {
               text: 'LeXcheX',
@@ -216,10 +216,6 @@ export default defineConfig({
             {
               text: 'LeXscroW',
               link: '/cyberdeals/lexscrow',
-            },
-            {
-              text: 'cyberRaise',
-              link: '/cyberdeals/cyberraise',
             },
           ],
         },
