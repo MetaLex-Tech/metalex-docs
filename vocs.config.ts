@@ -84,6 +84,18 @@ export default defineConfig({
               link: '/borg/conditions',
             },
             {
+              text: 'Governance Adapters',
+              link: '/borg/governance-adapters',
+            },
+            {
+              text: 'Helpers',
+              link: '/borg/helpers',
+            },
+            {
+              text: 'Hooks',
+              link: '/borg/hooks',
+            },
+            {
               text: '📋 BORG Types',
               collapsed: true,
               items: [
