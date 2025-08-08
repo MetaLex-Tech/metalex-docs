@@ -34,6 +34,10 @@ export default defineConfig({
                 link: '/borg/borg-core',
             },
             {
+              text: 'Borg Auth',
+              link: '/borg/borg-auth',
+            },
+            {
               text: 'BORG Modes',
                 link: '/borg/borg-modes',
               collapsed: true,

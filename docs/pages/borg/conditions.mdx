@@ -20,7 +20,7 @@ A **BORG** can enforce complex rules on what actions its Gnosis Safe is allowed 
 
 ## The Condition Manager Contract
 
-The Condition Manager (`ConditionManager.sol`) is the component that stores and evaluates conditions for a BORG. Every implant module in a BORG inherits the Condition Manager, meaning each module gains the ability to check conditions on its operations. The Condition Manager itself extends the BORG’s access control (it inherits `BorgAuthACL`), so only authorized addresses (usually the DAO or an oversight authority) can add or remove conditions. This ensures that BORG members cannot arbitrarily change the rules; condition management is a privileged action (`onlyOwner`).
+The Condition Manager (`ConditionManager.sol`) is the component that stores and evaluates conditions for a BORG. Every implant module in a BORG inherits the Condition Manager, meaning each module gains the ability to check conditions on its operations. The Condition Manager itself extends the BORG’s access control (it inherits [`BorgAuthACL`](/borg/borg-auth)), so only authorized addresses (usually the DAO or an oversight authority) can add or remove conditions. This ensures that BORG members cannot arbitrarily change the rules; condition management is a privileged action (`onlyOwner`).
 
 **Condition storage:** Internally, the manager keeps:
 
