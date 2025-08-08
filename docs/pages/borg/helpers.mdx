@@ -1,0 +1,12 @@
+---
+showOutline: false
+content:
+    width: 75%
+---
+
+# Helpers
+
+Utility contracts used across borgCORE live in the helpers library.
+
+- [`signatureHelper.sol`](https://github.com/MetaLex-Tech/borg-core/blob/main/src/libs/helpers/signatureHelper.sol) – verifies signatures for Gnosis Safe transactions. It reconstructs the Safe's EIP-712 transaction hash, recovers signer addresses, and returns the set of signers up to the Safe's threshold.
+
