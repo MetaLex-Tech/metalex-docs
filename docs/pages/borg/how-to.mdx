@@ -5,24 +5,35 @@ content:
 ---
 import { Callout } from "@components";
 
-# "How-to" BORG
+# How-to BORG
 
-# ![Logo](/borg-connect.png)
+This guide walks you through using the **MetaLeX OS** web app as a BORG member.
 
-Get started with BORGs in MetaLeX OS. To unlock actions based on your connected wallet's privileges, click the "Connect Wallet" button in the top right corner of MetaLeX OS and follow the steps.
+> **Who this is for:** Multisig signers and other authorized members of a BORG, typically acting as directors, officers, or committee members.
 
-<Callout>
-  Actions available in MetaLeX OS change depending on the privileges of your connected wallet. The interface supports actions for both BORG members and DAO token holders.
-</Callout>
+---
 
-## Basic workflow
+## Step-by-Step
 
-1. **Connect your wallet** using the button in the upper-right corner of the app.
-2. **Select the BORG** you want to interact with from the dashboard.
-3. **Review your permissions** to see whether you can propose or approve transactions.
-4. **Submit or confirm actions** directly in the interface. MetaLeX OS guides you through the required signatures or DAO votes.
-5. **Track execution** in the activity feed to verify when transactions are finalized onchain.
+1. **Connect your wallet**  
+   Click **Connect Wallet** in the top right. Once connected, the app will display your address and current role in the BORG.
 
-For an overview of available BORG types, visit the [BORG Command Center](/borg/borg-landing).
+2. **Select your BORG**  
+   From the dashboard, choose the BORG you want to operate. If no BORGs appear, ensure your wallet address has been added as a member.
 
+3. **Check your permissions**  
+   The interface will show whether you can propose transactions, approve them, or both. Your permissions are based on your on-chain role (set in `BorgAuth`).
 
+4. **Propose or approve a transaction**  
+   - To propose: Go to the **Transactions** tab, fill in the recipient, amount, and any data, then click **Submit**.  
+   - To approve: Navigate to **Pending Transactions**, review the details, and click **Approve**.
+
+5. **Track execution**  
+   Once the required approvals are collected, the transaction executes automatically on-chain.
+
+---
+
+![BORG Command Center screenshot](../images/borg-command.png)  
+*Figure: BORG Command Center with connected wallet and transaction list.*
+
+> **Note:** Available actions depend on your wallet's permissions. If you need additional privileges, request them from the BORG Owner or Admin.
