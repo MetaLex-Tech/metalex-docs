@@ -5,56 +5,31 @@ content:
 ---
 import { CardGrid, Card } from "@components";
 
-# BORG Types
 
-BORGs lend themselves to an almost infinite number of uses and configurations. Here are a few examples.
+BORGs can be specialized for different purposes. Each type combines a legal entity wrapper with a tailored set of smart contracts.
 
-<CardGrid>
-  <Card title="grantsBORG" link="/borg/borg-types/grantsborg">
-    <span>Manage grants and donations for a DAO or protocol.</span>
-  </Card>
-  <Card title="securityBORG" link="/borg/borg-types/securityborg">
-    <span>Wrap emergency multisigs to handle critical events.</span>
-  </Card>
-  <Card title="ipBORG" link="/borg/borg-types/ipborg">
-    <span>Oversee intellectual property for a DAO.</span>
-  </Card>
-  <Card title="finBORG" link="/borg/borg-types/finborg">
-    <span>Handle protocol-beneficial value and treasury operations.</span>
-  </Card>
-  <Card title="allianceBORG" link="/borg/borg-types/allianceborg">
-    <span>Coordinate aligned token holdings and partnerships.</span>
-  </Card>
-  <Card title="genBORG" link="/borg/borg-types/genborg">
-    <span>General-purpose BORG for human-in-the-loop functions.</span>
-  </Card>
-  <Card title="bizBORG" link="/borg/borg-types/bizborg">
-    <span>Onchain corporations, also known as cyberCORPs.</span>
-  </Card>
-</CardGrid>
+---
 
-## BORG Implants
+## grantsBORG
+Manages grant funding for projects.  
+- **Example:** A DAO funds open-source tools via grantsBORG, with all approvals and payouts tracked on-chain.
 
-MetaLeX's modular design lets any BORG use onchain implants to enhance or customize its capabilities.
+## ipBORG
+Holds and manages intellectual property (trademarks, copyrights, patents).  
+- Enables on-chain licensing and transparent ownership changes.
 
-<CardGrid>
-  <Card title="FailSafe_Implant" link="/borg/implants/fail-safe">
-    <span>Protect funds with recovery and DAO oversight.</span>
-  </Card>
-  <Card title="Eject_Implant" link="/borg/implants/eject">
-    <span>Manage members or allow self-ejection from a SAFE.</span>
-  </Card>
-  <Card title="OptimisticGrant_Implant" link="/borg/implants/optimistic-grant">
-    <span>Create preapproved grants with rate limits.</span>
-  </Card>
-  <Card title="DAOVoteGrant_Implant" link="/borg/implants/dao-vote-grant">
-    <span>Require DAO voting co-approval for grants.</span>
-  </Card>
-  <Card title="DAOVetoGrant_Implant" link="/borg/implants/dao-veto-grant">
-    <span>Add time-delay grants that the DAO can veto.</span>
-  </Card>
-  <Card title="MetaVesT" link="/cyberdeals/metavest">
-    <span>Advanced vesting and token lockup toolkit.</span>
-  </Card>
-</CardGrid>
+## devBORG
+Focuses on protocol or product development.  
+- Automates developer payments and milestone-based funding.
 
+## allianceBORG
+Jointly owned by multiple DAOs or entities to coordinate a shared initiative.  
+- **Example:** The Lido Alliance BORG coordinates shared staking infra investments.
+
+## finBORG
+Handles financial asset management and investments.  
+- Integrates with DeFi protocols under governance control.
+
+## bizBORG
+For-profit operating company, often paired with a cyberCORP.  
+- Runs revenue-generating activities on-chain with automated compliance.
