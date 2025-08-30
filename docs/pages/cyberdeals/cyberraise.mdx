@@ -32,17 +32,23 @@ A number of smart contracts and modules underlie cyberRaise’s on-chain functio
 
 ## Streamlined On-Chain Fundraising Process
 
-With the RoundManager, cyberRaise structures fundraising into a round lifecycle that automates capital flow and securities issuance:
+cyberRaise supports two transaction models. The **DealManager** powers bespoke single-counterparty deals, while the **RoundManager** coordinates multi-investor fundraising rounds.
+
+### DealManager Flow (single-investor deals)
+
+1. **Proposing a Deal:** The founder initiates a raise by selecting a template (SAFE, SAFT, SAFTE, etc.), entering deal terms, and signing the proposal. The DealManager records the pending deal on-chain.
+2. **Escrow Setup:** DealManager works with `LeXscroWLite` and the `IssuanceManager` to escrow investor funds and mint the NFT certificates representing the company’s securities. These assets remain in escrow until the investor acts.
+3. **Investor Countersigning & Funding:** The investor calls `signDealAndPay` to countersign and transfer funds in one transaction. DealManager verifies conditions such as `LexChexCondition` before accepting payment.
+4. **Finalizing the Deal:** When all conditions are satisfied, DealManager releases funds to the company, delivers the NFT certificates to the investor, and marks the agreement finalized.
+
+### RoundManager Flow (multi-investor rounds)
 
 1. **Round creation:** The founder uses the cyberRaise dashboard to start a raise, selecting the round type, series, and ticket sizes. They set parameters (series type, raise cap, min/max ticket, round type, payment token, price per unit, valuation, terms and template ID) and call `createRound`. The RoundManager deploys one or more `CyberCertPrinter` contracts via the `IssuanceManager` for each security to be issued, stores the parameters in the `Round` struct, and emits a `RoundCreated` event.
-
 2. **Expressions of Interest (EOI):** Investors join the round by calling `submitEOI` with their desired amount. The RoundManager checks the round’s status, uses `CyberAgreementRegistry` to create an agreement instance, sets up escrow via `LeXscroWLite`, and attaches any per‑EOI conditions (e.g. `LexChexCondition`) to enforce compliance.
-
 3. **Allocation & funding:** For `FCFS` rounds, allocation happens automatically when an EOI is submitted. For `FounderApproved` rounds, the founder reviews EOIs and calls `allocate` on those they accept. During allocation the system signs the agreement, computes units, mints certificates through `IssuanceManager`, attaches endorsements, refunds any surplus funds, finalizes the escrow, and updates the amount raised. Allocation mints **non‑transferable NFT certificates** representing securities (e.g., SAFE tokens, SAFT tokens, or hybrid instruments), demonstrating how capital flows and securities issuance are automated in CorpFi.
-
 4. **Closing & conversion:** A round closes when the raise cap is met or the end time passes, preventing new EOIs. For convertible instruments (SAFE, SAFT, SAFTE), the RoundManager provides functions to convert certificates into equity or tokens when a qualifying event such as a priced equity round or token generation event occurs. Conversions call `IssuanceManager` to mint new equity shares to SAFE holders or distribute tokens to SAFT holders, using valuation caps and discounts encoded in the certificates.
 
-For bespoke single‑investor deals, the legacy DealManager flow (proposal → escrow → countersign & fund → finalize) remains available and will be documented separately, but RoundManager is the recommended path for multi‑investor raises.
+RoundManager is the recommended path for multi-investor raises, while DealManager remains available for bespoke single-counterparty agreements.
 
 ### Round Types and Compliance Modules
 
