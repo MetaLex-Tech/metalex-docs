@@ -194,6 +194,29 @@ export default defineConfig({
             {
               text: 'Onchain Capital Structure',
               link: '/cybercorps/onchain-capital-structure',
+              collapsed: true,
+              items: [
+                {
+                  text: 'Core Components',
+                  link: '/cybercorps/onchain-capital-structure/core-components',
+                },
+                {
+                  text: 'Tokenized Stock Certificates',
+                  link: '/cybercorps/onchain-capital-structure/tokenized-stock-certificates',
+                },
+                {
+                  text: 'Transfer Restrictions',
+                  link: '/cybercorps/onchain-capital-structure/transfer-restrictions',
+                },
+                {
+                  text: 'Corporate Actions',
+                  link: '/cybercorps/onchain-capital-structure/corporate-actions',
+                },
+                {
+                  text: 'Benefits',
+                  link: '/cybercorps/onchain-capital-structure/benefits',
+                },
+              ],
             },
             {
               text: 'Governance and Officers',
