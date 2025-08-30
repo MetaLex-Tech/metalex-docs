@@ -1,0 +1,44 @@
+---
+showOutline: false
+content:
+  width: 75%
+---
+
+# Corporate Actions via Smart Contracts
+
+Because equity and investor agreements live on-chain, many **corporate actions** can be automated or executed with a single transaction. The IssuanceManager and CyberCertPrinters work in tandem to handle typical events in a company’s life cycle:
+
+*   **Issuing New Shares:** When the company needs to issue more stock (for example, issuing founder shares, or closing a new investment round), the IssuanceManager mints new tokens via the relevant CyberCertPrinter. This could be a new Common Stock certificate to a founder, or a batch of Preferred Stock certificates to investors in a financing round. The details of the issuance (who the investor is, how much they paid, valuation, etc.) are captured in the token’s metadata or in event logs. There’s no need to manually update a spreadsheet or stock ledger book – the blockchain **transaction itself is the update**. When fundraising is performed through MetaLeX’s **Round Manager**, the IssuanceManager deploys any required CyberCertPrinter contracts at round creation and mints certificates to investors as allocations are confirmed. For example, EOI submissions in a Series Seed round lead to Series Seed Preferred Stock certificates being minted to multiple investors as the round closes.
+
+*   **Hybrid Security Issuance and Conversions:** When a company completes a round through the Round Manager, the IssuanceManager automatically mints certificates for SAFEs, SAFTs, SAFTEs, and equity shares. Conversions are triggered by a subsequent priced equity round for SAFEs and SAFTEs or by a token generation event for SAFTs. The IssuanceManager calculates the correct share or token allocation and mints new certificates accordingly, keeping the on-chain cap table current without manual intervention.
+
+*   **Stock Splits and Mergers:** If the company ever needs to **split** its stock (e.g., a 2-for-1 split of common shares) or perform other cap table reorganizations, the on-chain approach simplifies this. Rather than issuing new certificates and canceling old ones manually, a smart contract function can automate the process – minting additional tokens to each holder in a split, or adjusting token metadata to reflect changes. Similarly, if two classes are merged or a class is reclassified, the contracts could support retiring one CyberCertPrinter’s tokens and reissuing under another, all with a verified record of what happened.
+
+*   **Cancellations and Buybacks:** In cases of certificate cancellations (like voiding a lost certificate, or share buybacks/redemptions by the company), an admin can call the IssuanceManager to **void** a specific token ID. The system might either burn the NFT or mark it as canceled in metadata. This is analogous to tearing up a paper certificate, but with an immutable on-chain record that certificate #X was voided at a certain block/time by the company. If the company repurchases shares from a shareholder, it can similarly have the shareholder transfer the token back and then burn or hold it as treasury stock (depending on the desired outcome), all traceable on-chain.
+
+All of these actions emit events and leave a permanent record. At any point, the company or investors can query the blockchain to get a **real-time cap table**: which addresses hold which shares, and how many. There’s no need to reconcile multiple sources of truth – the chain _is_ the source of truth. Moreover, these actions can be executed in a single atomic sequence if needed. For instance, MetaLeX’s CyberCorpFactory contract (used when creating a new cyberCORP) can deploy a new company **and immediately perform a fundraising issuance** in one go. The factory can deploy the corp’s contracts, then call IssuanceManager to create a stock class and issue a SAFE or shares to an investor, then even set up a deal escrow – all in one blockchain transaction (the web app orchestrates this when a founder clicks “Launch and Fund”). This demonstrates the power of on-chain integration: **complex multi-step legal processes can be automated**, reducing turnaround time from weeks to seconds.
+
+solidity
+
+```
+// Example: Creating a new share class (Series A Preferred Stock) and issuing shares to an investor
+
+address seriesAContract = issuanceManager.createCertPrinter(
+    ["Restricted: Unregistered Security"],   // default legend for this stock class
+    "Series A Preferred Stock",              // name of the security
+    "SERIESA",                               // ticker symbol
+    "ipfs://Qm...certificateMetadata.json",  // URI to off-chain certificate details
+    SecurityClass.PreferredStock,            // type of security (from enum)
+    SecuritySeries.SeriesA,                  // series designation (from enum)
+    address(0)                               // no special extension logic
+);
+
+uint256 newCertId = issuanceManager.createCertAndAssign(
+    seriesAContract, 
+    investorAddress, 
+    certificateDetailsStruct                // details like investment amount, shares, etc.
+);
+// The above call mints a new NFT stock certificate (ID = newCertId) to the investorAddress.
+```
+
+_In the code snippet:_ The `createCertPrinter` call deploys a new NFT contract for **Series A Preferred Stock** with a transfer restriction legend. The `createCertAndAssign` then mints a new share certificate token from that contract and assigns it to an investor in one step. These functions are part of the cyberCORP’s IssuanceManager contract (see the cybercorps-contracts code for implementation details).
