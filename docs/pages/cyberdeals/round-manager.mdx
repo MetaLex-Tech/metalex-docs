@@ -1,0 +1,30 @@
+---
+showOutline: false
+content:
+  width: 75%
+---
+
+# Round Manager
+
+The `RoundManager` contract drives the lifecycle of fundraising rounds in the cyberDeals stack. It stores round metadata, tracks expressions of interest (EOIs), and exposes functions that move a raise from creation through conversion. For an overview of how these rounds surface in the app, see [cyberRaise](/cyberdeals/cyberraise).
+
+## Round Lifecycle
+
+- **createRound** – founder opens a round with parameters such as allocation size, deal template, and whether the round is first‑come‑first‑served (FCFS) or requires explicit approval.
+- **submitEOI** – investors signal interest in the round by submitting an EOI indicating how much they want to commit.
+- **allocate** – an authorized role accepts an EOI and reserves allocation for that investor.
+- **reject** – an EOI can be rejected, keeping the round open for other participants.
+- **closeRound** – ends the round and prevents new EOIs or allocations.
+- **convert** – after a successful close, accepted EOIs are converted into on‑chain agreements and the corresponding security NFTs are minted.
+
+## Data Structures
+
+`Round` records the core details of a raise: creator, total allocation, template reference, whether it is FCFS, and if issued securities are currently transferable.
+
+`EOI` (expression of interest) captures an investor’s requested allocation, wallet address, and current status (pending, accepted, or rejected).
+
+## FCFS vs Founder‑Approved Rounds
+
+FCFS rounds automatically allocate to the first valid EOIs until the allocation is exhausted. Founder‑approved rounds queue EOIs and require an authorized BorgAuth role to call `allocate` or `reject` before funds can move. This allows the company to vet investors while still managing the process on‑chain.
+
+BorgAuth roles therefore determine who can advance the round lifecycle, accept or reject EOIs, and toggle transferability or other restrictions.
