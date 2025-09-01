@@ -14,6 +14,10 @@ export default defineConfig({
           link: '/key-terms',
         },
         {
+          text: '❓ FAQ',
+          link: '/faq',
+        },
+        {
           text: '🤖 BORGs',
           collapsed: true,
           items: [
