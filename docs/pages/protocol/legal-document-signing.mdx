@@ -1,3 +1,5 @@
+import { Mermaid } from "@components";
+
 # Legal Document Signing
 
 This section documents how the CyberAgreementRegistry smart contract applies and verifies cryptographic signatures for off-chain legal documents. The contract allows parties to sign legal documents that live off-chain (for example, PDFs stored on IPFS) while binding those documents to on-chain agreement data. It uses the Elliptic Curve Digital Signature Algorithm (ECDSA) and EIP-712 typed structured data to ensure signatures are tamper-resistant and replay-protected.
@@ -118,8 +120,8 @@ A party calls `signContract` with the `contractId`, their party-specific field v
 
 ### Signature Flow
 
-```text
-sequenceDiagram
+<Mermaid
+  chart={`sequenceDiagram
     participant User as Party/Wallet
     participant Doc as Legal Doc (IPFS/URL)
     participant SmartContract as CyberAgreementRegistry
@@ -132,19 +134,19 @@ sequenceDiagram
     SmartContract->>SmartContract: _hashTypedDataV4(data)
     SmartContract->>SmartContract: ECDSA.recover(signature)
     SmartContract->>SmartContract: _verifySignature (direct or delegated)
-    SmartContract-->>User: Emits AgreementSigned
-```
+    SmartContract-->>User: Emits AgreementSigned`}
+/>
 
 ### Document Binding
 
-```text
-graph LR
+<Mermaid
+  chart={`graph LR
     A[Legal Doc (IPFS/URL)] --> B[URI stored in template]
     B --> C[URI hashed into EIP-712 message]
     C --> D[ECDSA Signature]
     D --> E[Signature verified on-chain]
-    E --> F[Agreement bound to off-chain document]
-```
+    E --> F[Agreement bound to off-chain document]`}
+/>
 
 <details>
 <summary>Notes on Edge Cases: Delegation, Voiding, Escrow</summary>
