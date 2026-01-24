@@ -1,0 +1,158 @@
+# Legal Document Signing
+
+This section documents how the CyberAgreementRegistry smart contract applies and verifies cryptographic signatures for off-chain legal documents. The contract allows parties to sign legal documents that live off-chain (for example, PDFs stored on IPFS) while binding those documents to on-chain agreement data. It uses the Elliptic Curve Digital Signature Algorithm (ECDSA) and EIP-712 typed structured data to ensure signatures are tamper-resistant and replay-protected.
+
+## ECDSA and EIP-712 Signatures
+
+### ECDSA signature verification
+
+Parties sign an Ethereum ECDSA signature off-chain, and the contract verifies it on-chain using OpenZeppelin’s `ECDSA` library. The contract hashes the EIP-712 typed data, calls `ecrecover` via `ECDSA.recover`, and compares the recovered address with the expected signer address. If the recovered address matches (or is a valid delegate for the signer), the signature is accepted.
+
+### EIP-712 typed data signing
+
+The contract implements EIP-712 typed structured data signing. It builds a domain separator using the contract name (`"CyberAgreementRegistry"`), the version string, the current chain ID, and the contract address, which prevents cross-contract and cross-chain replay. The signature payload uses a type hash for the following data structure:
+
+`SignatureData(bytes32 contractId,string legalContractUri,string[] globalFields,string[] partyFields,string[] globalValues,string[] partyValues)`
+
+The full EIP-712 message hash is computed with the standard format:
+
+`\x19\x01 || DOMAIN_SEPARATOR || keccak256(encode(SIGNATUREDATA_TYPEHASH, dataFields))`
+
+This ensures the signature covers the contract ID, the legal document’s URI, and all field values, binding the agreement’s content to the signature.
+
+## Off-Chain Document Reference
+
+Each contract template stores a `legalContractUri` (for example, an IPFS URI or a web URL pointing to a PDF). This URI is stored on-chain and included in the EIP-712 data that signers approve. When a party signs, they are not signing the PDF bytes directly—they are signing the hash of structured data that includes the `legalContractUri` along with the agreement’s field values.
+
+Because the URI (or its content hash, if the URI encodes it) is part of the EIP-712 hash, any change to the document or its URI produces a different digest and invalidates the signature. This creates a cryptographic link between the off-chain legal document and the on-chain agreement record.
+
+## Signing Process Implementation
+
+Below are key excerpts from the CyberAgreementRegistry contract showing how signatures are verified and recorded.
+
+### `verifySignature` (ECDSA verification + delegation)
+
+```solidity
+function _verifySignature(
+    address signer,
+    SignatureData memory data,
+    bytes memory signature
+) internal view returns (bool) {
+    // Hash the data (AgreementData) according to EIP-712
+    bytes32 digest = _hashTypedDataV4(data);
+
+    // Recover the signer address
+    address recoveredSigner = digest.recover(signature);
+    
+    // Check direct signature
+    if (recoveredSigner == signer) {
+        return true;
+    }
+    
+    // Check delegation signature
+    Delegation storage delegation = delegations[signer];
+    if (delegation.delegate == recoveredSigner && 
+        (delegation.expiry == 0 || delegation.expiry > block.timestamp)) {
+        return true;
+    }
+    
+    return false;
+}
+```
+
+This function hashes the `SignatureData` struct with EIP-712 (`_hashTypedDataV4`) and then recovers the signer’s address from the signature. It first checks for a direct signature match. If that fails, it checks whether the recovered signer is a valid delegate for the expected signer (and that the delegation has not expired). If either check succeeds, the signature is considered valid, enabling delegated signing workflows.
+
+### `hashSignatureData` (EIP-712 digest construction)
+
+```solidity
+function _hashTypedDataV4(
+    SignatureData memory data
+) internal view returns (bytes32) {
+    return
+        keccak256(
+            abi.encodePacked(
+                "\x19\x01",
+                DOMAIN_SEPARATOR,
+                keccak256(
+                    abi.encode(
+                        SIGNATUREDATA_TYPEHASH,
+                        data.contractId,
+                        keccak256(bytes(data.legalContractUri)),
+                        _hashStringArray(data.globalFields),
+                        _hashStringArray(data.partyFields),
+                        _hashStringArray(data.globalValues),
+                        _hashStringArray(data.partyValues)
+                    )
+                )
+            )
+        );
+}
+```
+
+This helper builds the EIP-712 digest by prefixing the standard `"\x19\x01"` and `DOMAIN_SEPARATOR`, then hashing the encoded `SignatureData` fields. The `legalContractUri` string is hashed with `keccak256(bytes(uri))`, and each string array is hashed via `_hashStringArray` (which hashes each element, then the array as a whole). This ensures the final digest uniquely represents the agreement’s template, the legal document reference, and all field values the signer is approving.
+
+### `signContract` (public entry point)
+
+```solidity
+function signContract(
+    bytes32 contractId,
+    string[] memory partyValues,
+    bytes calldata signature,
+    bool fillUnallocated, // to fill a 0 address or not
+    string memory secret
+) external {
+    signContractFor(
+        msg.sender,
+        contractId,
+        partyValues,
+        signature,
+        fillUnallocated,
+        secret
+    );
+}
+```
+
+A party calls `signContract` with the `contractId`, their party-specific field values, and their ECDSA signature (plus flags for filling an unallocated party slot and providing a secret, if required). The function forwards to `signContractFor`, which validates that the contract exists and is not already signed by this party, handles assigning the signer into an empty party slot if `fillUnallocated` is allowed, and verifies the signature using `_verifySignature`. If the signature is valid, it records the signature timestamp, updates `numSignatures`, stores the `partyValues`, and emits `AgreementSigned`. If all required parties have signed, it emits `ContractFullySigned`, and auto-finalizes when no explicit finalizer is set.
+
+## Mermaid Diagrams
+
+### Signature Flow
+
+```mermaid
+sequenceDiagram
+    participant User as Party/Wallet
+    participant Doc as Legal Doc (IPFS/URL)
+    participant SmartContract as CyberAgreementRegistry
+
+    Note over User,Doc: User prepares agreement data (contractId, URI, fields)
+    User->>Doc: Retrieves legalContractUri (PDF/URL)
+    User->>User: Hashes typed data (EIP-712)
+    User->>User: Signs hash with ECDSA
+    User->>SmartContract: signContract(contractId, partyValues, signature)
+    SmartContract->>SmartContract: _hashTypedDataV4(data)
+    SmartContract->>SmartContract: ECDSA.recover(signature)
+    SmartContract->>SmartContract: _verifySignature (direct or delegated)
+    SmartContract-->>User: Emits AgreementSigned
+```
+
+### Document Binding
+
+```mermaid
+graph LR
+    A[Legal Doc (IPFS/URL)] --> B[URI stored in template]
+    B --> C[URI hashed into EIP-712 message]
+    C --> D[ECDSA Signature]
+    D --> E[Signature verified on-chain]
+    E --> F[Agreement bound to off-chain document]
+```
+
+<details>
+<summary>Notes on Edge Cases: Delegation, Voiding, Escrow</summary>
+
+**Delegation:** The contract supports delegated signing. A party can store a delegate address plus an optional expiry in the `delegations` mapping. During `_verifySignature`, if the recovered signer is not the expected party, the contract checks whether the recovered signer is the delegate and whether the delegation is still valid (expiry is zero or in the future). This enables cases such as an executive authorizing an assistant to sign on their behalf for a limited time.
+
+**Voiding a Contract:** The contract can be voided via `voidContractFor`, which requires an EIP-712 signature over `VoidSignatureData` (containing `contractId` and `party`) unless the caller is the finalizer. Each valid request adds the party to `voidRequestedBy` and emits `VoidRequested`. The contract is marked voided if it has expired, if all parties have requested voiding, or if the first party (the initiator) voids before other parties sign (allowing early cancellation). When voided, it emits `ContractVoided`, and no further signing is permitted.
+
+**Escrow Signer:** `signContractWithEscrow` allows the designated finalizer (protected by `onlyDefinedFinalizer`) to submit a signature on behalf of an `escrowSigner`. The finalizer provides the escrow signer’s signature and `partyValues`, and the contract assigns the escrow signer to an empty party slot if allowed. This function does not run `_verifySignature`, assuming the finalizer has independently verified the off-chain signature, and then records the signature on-chain. This enables workflows where a party signs offline and an escrow agent (the finalizer) records the signature, without the escrow agent being able to forge a signature.
+
+</details>
