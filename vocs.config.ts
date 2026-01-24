@@ -241,16 +241,6 @@ export default defineConfig({
           ],
         },
         {
-          text: '🧾 Protocol',
-          collapsed: true,
-          items: [
-            {
-              text: 'Legal Document Signing',
-              link: '/protocol/legal-document-signing',
-            },
-          ],
-        },
-        {
           text: '🤝 cyberDeals',
           collapsed: true,
           items: [
@@ -279,6 +269,10 @@ export default defineConfig({
             {
               text: 'Intro to Cybernetic Law',
               link: '/cybernetic-law/intro-to-cybernetic-law',
+            },
+            {
+              text: 'Legal Document Signing',
+              link: '/protocol/legal-document-signing',
             },
           ],
         },
