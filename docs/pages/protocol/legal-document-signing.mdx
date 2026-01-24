@@ -118,7 +118,7 @@ A party calls `signContract` with the `contractId`, their party-specific field v
 
 ### Signature Flow
 
-```mermaid
+```text
 sequenceDiagram
     participant User as Party/Wallet
     participant Doc as Legal Doc (IPFS/URL)
@@ -137,7 +137,7 @@ sequenceDiagram
 
 ### Document Binding
 
-```mermaid
+```text
 graph LR
     A[Legal Doc (IPFS/URL)] --> B[URI stored in template]
     B --> C[URI hashed into EIP-712 message]
