@@ -270,6 +270,10 @@ export default defineConfig({
               text: 'Intro to Cybernetic Law',
               link: '/cybernetic-law/intro-to-cybernetic-law',
             },
+            {
+              text: 'Legal Document Signing',
+              link: '/protocol/legal-document-signing',
+            },
           ],
         },
   ],
