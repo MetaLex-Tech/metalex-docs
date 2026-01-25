@@ -140,8 +140,8 @@ A party calls `signContract` with the `contractId`, their party-specific field v
 ### Document Binding
 
 <Mermaid
-  chart={`graph LR
-    A[Legal Doc (IPFS/URL)] --> B[URI stored in template]
+  chart={`graph TD
+    A["Legal Doc (IPFS/URL)"] --> B[URI stored in template]
     B --> C[URI hashed into EIP-712 message]
     C --> D[ECDSA Signature]
     D --> E[Signature verified on-chain]
