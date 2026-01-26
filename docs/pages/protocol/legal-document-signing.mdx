@@ -118,23 +118,38 @@ A party calls `signContract` with the `contractId`, their party-specific field v
 
 ## Mermaid Diagrams
 
-### Signature Flow
+### Agreement Creation & Signature Flow
 
 <Mermaid
   chart={`sequenceDiagram
-    participant User as Party/Wallet
+    participant PartyA as PartyA/WalletA
+    participant CounterParties as CounterParty(ies)/Wallet(s)
     participant Doc as Legal Doc (IPFS/URL)
-    participant SmartContract as CyberAgreementRegistry
+    participant SmartContract as CyberAgreementRegistry (modified)
 
-    Note over User,Doc: User prepares agreement data (contractId, URI, fields)
-    User->>Doc: Retrieves legalContractUri (PDF/URL)
-    User->>User: Hashes typed data (EIP-712)
-    User->>User: Signs hash with ECDSA
-    User->>SmartContract: signContract(contractId, partyValues, signature)
-    SmartContract->>SmartContract: _hashTypedDataV4(data)
-    SmartContract->>SmartContract: ECDSA.recover(signature)
-    SmartContract->>SmartContract: _verifySignature (direct or delegated)
-    SmartContract-->>User: Emits AgreementSigned`}
+        Note over PartyA,SmartContract: PartyA creates & signs agreement data (contractId, URI, fields)
+        PartyA->>Doc: Uploads legal docs (PDF)
+        Doc-->>PartyA: IPFS URL retrieved
+        PartyA->>PartyA: Hashes typed data (EIP-712)
+        PartyA->>PartyA: Signs hash with ECDSA
+        PartyA->>SmartContract: createStandaloneContractAndSign(contractId, fields, signature)
+        SmartContract-->>PartyA: Emits TemplateCreated
+        SmartContract-->>PartyA: Emits ContractCreated
+        SmartContract->>SmartContract: _hashTypedDataV4(data)
+        SmartContract->>SmartContract: ECDSA.recover(signature)
+        SmartContract->>SmartContract: _verifySignature (direct or delegated)
+        SmartContract-->>PartyA: Emits AgreementSigned
+
+        Note over CounterParties,SmartContract: CounterParties sign agreement (contractId, URI, fields)
+        CounterParties->>CounterParties: Hashes typed data (EIP-712)
+        CounterParties->>CounterParties: Signs hash with ECDSA
+
+        %% TODO review needed
+        CounterParties->>SmartContract: signContract(contractId, fields, signature)
+        SmartContract->>SmartContract: _hashTypedDataV4(data)
+        SmartContract->>SmartContract: ECDSA.recover(signature)
+        SmartContract->>SmartContract: _verifySignature (direct or delegated)
+        SmartContract-->>CounterParties: Emits AgreementSigned`}
 />
 
 ### Document Binding
