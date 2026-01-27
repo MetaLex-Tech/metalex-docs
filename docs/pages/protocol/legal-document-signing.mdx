@@ -163,7 +163,7 @@ A party calls `signContract` with the `contractId`, their party-specific field v
     E --> F[Agreement bound to off-chain document]`}
 />
 
-<details>
+<details open>
 <summary>Notes on Edge Cases: Delegation, Voiding, Escrow</summary>
 
 **Delegation:** The contract supports delegated signing. A party can store a delegate address plus an optional expiry in the `delegations` mapping. During `_verifySignature`, if the recovered signer is not the expected party, the contract checks whether the recovered signer is the delegate and whether the delegation is still valid (expiry is zero or in the future). This enables cases such as an executive authorizing an assistant to sign on their behalf for a limited time.
